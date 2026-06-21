@@ -1,160 +1,1003 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NiKo Tears Chronicle</title>
-  <meta
-    name="description"
-    content="A bilingual editorial-style chronicle of NiKo's Major heartbreaks, legacy, and long pursuit of Counter-Strike's biggest trophy."
-  >
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+SC:wght@400;500;700;900&family=Work+Sans:wght@400;500;700;800&display=swap"
-    rel="stylesheet"
-  >
-  <link rel="stylesheet" href="./assets/site.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<title>NiKo · The Redemption — IEM Cologne Major 2026</title>
+<meta name="description" content="NiKo封神之路 - 2026 IEM科隆Major冠军编年史">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Montserrat:wght@700;800;900&family=Roboto:wght@400;700&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --dark:#0a0d14;--dark2:#11151f;--dark3:#1a1f2e;--line:#2a3142;
+  --text:#c7d0d9;--dim:#8a92a0;--mute:#5a626e;
+  --theme:#7c3aed;--theme2:#c026d3;--gold:#f5c542;--gold2:#d4a017;
+  --red:#ef4444;--green:#22c55e;
+}
+html{scroll-behavior:smooth}
+body{background:var(--dark);color:var(--text);font-family:'DM Sans',Arial,sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden}
+a{color:var(--theme2);text-decoration:none;transition:.2s}
+a:hover{color:#fff}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.section{padding:90px 0;position:relative}
+.bg-dark{background:var(--dark2)}
+.bg-darker{background:var(--dark)}
+
+/* PRELOADER */
+.preloader{position:fixed;inset:0;background:var(--dark);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .6s,visibility .6s}
+.preloader.hide{opacity:0;visibility:hidden}
+.pl-logo{font-family:'Montserrat',sans-serif;font-weight:900;font-size:48px;color:#fff;letter-spacing:-2px;text-shadow:0 0 40px rgba(124,58,237,.7)}
+.pl-logo span{color:var(--theme2)}
+.pl-sub{margin-top:14px;color:var(--mute);font-size:11px;letter-spacing:4px;text-transform:uppercase}
+.pl-bar{margin-top:28px;width:220px;height:2px;background:var(--dark3);overflow:hidden}
+.pl-bar::after{content:"";display:block;width:40%;height:100%;background:linear-gradient(90deg,var(--theme),var(--theme2));animation:plslide 1.2s infinite}
+@keyframes plslide{0%{margin-left:-40%}100%{margin-left:100%}}
+
+/* HEADER */
+.header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 0;transition:.3s;background:linear-gradient(180deg,rgba(10,13,20,.92),transparent)}
+.header.scrolled{background:rgba(10,13,20,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:12px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Montserrat',sans-serif;font-weight:900;font-size:24px;color:#fff;letter-spacing:-1px}
+.logo span{color:var(--theme2)}
+.nav{display:flex;gap:30px;align-items:center}
+.nav a{color:var(--text);font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase}
+.nav a:hover{color:#fff}
+.lang-btn{background:linear-gradient(90deg,var(--theme),var(--theme2));border:none;color:#fff;padding:9px 20px;font-weight:700;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;border-radius:2px;transition:.2s}
+.lang-btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(124,58,237,.45)}
+.menu-toggle{display:none;background:none;border:none;color:#fff;font-size:24px}
+
+/* HERO CAROUSEL */
+.hero{position:relative;min-height:100vh;overflow:hidden}
+.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s;display:flex;align-items:center;padding:120px 0 80px}
+.hero-slide.active{opacity:1}
+.hero-bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,13,20,.88) 0%,rgba(10,13,20,.55) 50%,rgba(124,58,237,.3) 100%)}
+.hero-inner{position:relative;z-index:2;max-width:820px}
+.hero-tag{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(90deg,var(--theme),var(--theme2));padding:9px 24px;color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:26px;border-radius:2px}
+.hero-tag::before{content:"●";color:var(--gold);animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(52px,9vw,108px);line-height:.92;letter-spacing:-3px;color:#fff;margin-bottom:22px;text-transform:uppercase}
+.hero h1 .accent{background:linear-gradient(90deg,var(--theme2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-sub{font-family:'Noto Serif SC',serif;font-weight:500;font-size:clamp(18px,2.2vw,24px);color:var(--gold);margin-bottom:32px;letter-spacing:4px;line-height:1.6}
+.hero-desc{font-size:17px;color:var(--dim);max-width:620px;margin-bottom:42px;line-height:1.8}
+.hero-cta{display:flex;gap:18px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:15px 34px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;border:none;transition:.25s;border-radius:2px}
+.btn-primary{background:linear-gradient(90deg,var(--theme),var(--theme2));color:#fff}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(124,58,237,.5);color:#fff}
+.btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.25)}
+.btn-outline:hover{border-color:var(--theme2);color:var(--theme2)}
+.hero-dots{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);z-index:3;display:flex;gap:14px}
+.hero-dot{width:42px;height:3px;background:rgba(255,255,255,.2);border:none;cursor:pointer;transition:.2s}
+.hero-dot.active{background:linear-gradient(90deg,var(--theme),var(--theme2))}
+
+/* SECTION HEAD */
+.sec-head{margin-bottom:55px;text-align:center}
+.sec-sub{display:inline-block;color:var(--theme2);font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;letter-spacing:4px;text-transform:uppercase;margin-bottom:14px}
+.sec-title{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(34px,5.5vw,58px);color:#fff;letter-spacing:-1.5px;line-height:1;text-transform:uppercase}
+.sec-title .accent{background:linear-gradient(90deg,var(--theme2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* MATCH */
+.match-card{background:var(--dark3);border:1px solid var(--line);padding:28px 24px;margin-bottom:14px;display:grid;grid-template-columns:120px 1fr auto auto;gap:24px;align-items:center;transition:.25s}
+.match-card:hover{border-color:var(--theme2);background:#1f2535}
+.match-logos{display:flex;align-items:center;justify-content:center;gap:10px}
+.team-logo-img{width:48px;height:48px;object-fit:contain}
+.match-vs{color:var(--mute);font-size:11px;font-weight:700}
+.match-info h3{font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;color:#fff;margin-bottom:4px}
+.match-info h3 span{color:var(--theme2)}
+.match-info p{color:var(--dim);font-size:12px;letter-spacing:.5px}
+.match-score{font-family:'Montserrat',sans-serif;font-weight:900;font-size:28px;color:#fff;letter-spacing:-1px}
+.match-score.win{color:var(--green)}
+.match-actions{display:flex;gap:8px}
+.icon-btn{width:38px;height:38px;border:1px solid var(--line);background:transparent;color:var(--dim);display:flex;align-items:center;justify-content:center;border-radius:2px;transition:.2s;font-size:13px}
+.icon-btn:hover{border-color:var(--theme2);color:var(--theme2)}
+
+/* SCOREBOARD BIG */
+.scoreboard{background:var(--dark3);border:1px solid var(--line);padding:36px 30px;position:relative;overflow:hidden}
+.scoreboard::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--theme),var(--theme2),var(--gold))}
+.sb-meta{text-align:center;color:var(--mute);font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:24px}
+.sb-meta b{color:var(--gold)}
+.sb-main{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:30px;margin-bottom:24px}
+.sb-team{text-align:center}
+.sb-team .logo-circle{width:110px;height:110px;margin:0 auto 14px;display:flex;align-items:center;justify-content:center}
+.sb-team .logo-circle img{max-width:100%;max-height:100%;object-fit:contain}
+.sb-team .name{font-family:'Montserrat',sans-serif;font-weight:900;font-size:22px;color:#fff;letter-spacing:1px;margin-bottom:4px;text-transform:uppercase}
+.sb-team .region{color:var(--mute);font-size:11px;letter-spacing:2px;text-transform:uppercase}
+.sb-score{font-family:'Montserrat',sans-serif;font-weight:900;font-size:80px;line-height:1;letter-spacing:-3px;background:linear-gradient(90deg,var(--theme2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sb-score .colon{color:var(--mute);-webkit-text-fill-color:var(--mute);margin:0 6px}
+.sb-maps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;border-top:1px solid var(--line);padding-top:24px}
+.sb-map{text-align:center;padding:16px 10px;background:var(--dark);border:1px solid var(--line);border-radius:2px}
+.sb-map .map-name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;color:var(--text);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.sb-map .map-score{font-family:'Montserrat',sans-serif;font-weight:900;font-size:24px;color:#fff}
+.sb-map .map-score .w{color:var(--green)}
+.sb-map .map-score .l{color:var(--red)}
+.sb-mvp{margin-top:20px;text-align:center;padding:16px;background:linear-gradient(90deg,rgba(245,197,66,.1),rgba(245,197,66,.05));border:1px solid rgba(245,197,66,.3)}
+.sb-mvp .mvp-label{color:var(--gold);font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:6px}
+.sb-mvp .mvp-name{color:#fff;font-family:'Montserrat',sans-serif;font-weight:900;font-size:20px}
+.sb-mvp .mvp-stats{color:var(--dim);font-size:12px;margin-top:4px}
+.sb-mvp .mvp-stats b{color:var(--gold)}
+
+/* STORY */
+.story-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.story-card{background:var(--dark3);border:1px solid var(--line);overflow:hidden;transition:.3s}
+.story-card:hover{transform:translateY(-4px);border-color:var(--theme2)}
+.story-img{aspect-ratio:16/9;background-size:cover;background-position:center;position:relative}
+.story-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(10,13,20,.7))}
+.story-cat{position:absolute;top:14px;left:14px;z-index:2;background:linear-gradient(90deg,var(--theme),var(--theme2));color:#fff;padding:6px 16px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
+.story-body{padding:26px}
+.story-num{font-family:'Montserrat',sans-serif;font-weight:900;font-size:12px;color:var(--theme2);letter-spacing:3px;margin-bottom:8px}
+.story-title{font-family:'Montserrat',sans-serif;font-weight:800;font-size:20px;color:#fff;margin-bottom:12px;line-height:1.3}
+.story-excerpt{color:var(--dim);font-size:14px;line-height:1.75;margin-bottom:14px}
+.story-meta{color:var(--mute);font-size:11px;letter-spacing:1px;text-transform:uppercase}
+
+/* NIKO FEATURE CARD */
+.niko-feature{display:grid;grid-template-columns:1fr 1.2fr;gap:0;background:var(--dark3);border:1px solid var(--line);overflow:hidden;margin-bottom:30px}
+.niko-feature-img{background-size:cover;background-position:center top;min-height:540px;position:relative;background-color:var(--dark2)}
+.niko-feature-img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 70%,var(--dark3))}
+.niko-feature-body{padding:50px 40px;display:flex;flex-direction:column;justify-content:center}
+.niko-feature-tag{color:var(--theme2);font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;letter-spacing:4px;text-transform:uppercase;margin-bottom:12px}
+.niko-feature-name{font-family:'Montserrat',sans-serif;font-weight:900;font-size:64px;color:#fff;letter-spacing:-2px;line-height:1;margin-bottom:6px}
+.niko-feature-real{color:var(--mute);font-size:14px;margin-bottom:22px;letter-spacing:1px}
+.niko-feature-meta{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:28px;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.niko-meta-item .lab{color:var(--mute);font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px}
+.niko-meta-item .val{color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px}
+.niko-meta-item .val.gold{color:var(--gold)}
+.niko-feature-quote{font-family:'Noto Serif SC',serif;font-style:italic;color:var(--text);font-size:15px;line-height:1.8;border-left:3px solid var(--theme2);padding-left:18px}
+
+/* POEM */
+.poem-section{text-align:center;padding:120px 0;position:relative;overflow:hidden;background:linear-gradient(180deg,var(--dark),#060810)}
+.poem-section::before{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(245,197,66,.1),transparent 70%);pointer-events:none}
+.poem-wrap{max-width:720px;margin:0 auto;position:relative;z-index:2}
+.poem-label{font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;color:var(--gold);letter-spacing:6px;text-transform:uppercase;margin-bottom:36px}
+.poem{font-family:'Noto Serif SC',serif;font-weight:500;font-size:clamp(22px,3vw,32px);line-height:2;color:#fff;letter-spacing:4px}
+.poem .line{display:block;margin-bottom:10px}
+.poem .line.gold{background:linear-gradient(90deg,var(--gold),var(--theme2));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:900;font-size:clamp(26px,3.5vw,38px);margin-top:26px;letter-spacing:6px}
+.poem-credit{margin-top:54px;color:var(--mute);font-size:12px;letter-spacing:3px;text-transform:uppercase}
+.poem-credit b{color:var(--gold)}
+
+/* STATS BAR */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--dark3);border:1px solid var(--line)}
+.stat-cell{padding:42px 20px;text-align:center;border-right:1px solid var(--line);position:relative}
+.stat-cell:last-child{border-right:none}
+.stat-cell::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--theme),var(--theme2));opacity:0;transition:.3s}
+.stat-cell:hover::before{opacity:1}
+.stat-num{font-family:'Montserrat',sans-serif;font-weight:900;font-size:52px;line-height:1;letter-spacing:-2px;margin-bottom:10px}
+.stat-num.red{color:var(--red)}
+.stat-num.gold{color:var(--gold)}
+.stat-num.green{color:var(--green)}
+.stat-num.purple{background:linear-gradient(90deg,var(--theme),var(--theme2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat-label{color:var(--dim);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600}
+
+/* ROSTER */
+.roster-list{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:14px}
+.roster-card{background:var(--dark3);border:1px solid var(--line);padding:24px 18px;text-align:center;transition:.3s}
+.roster-card:hover{transform:translateY(-4px);border-color:var(--theme2)}
+.roster-card.featured{border-color:var(--gold);background:linear-gradient(180deg,rgba(245,197,66,.08),var(--dark3))}
+.roster-card .avatar{width:80px;height:80px;margin:0 auto 14px;border-radius:50%;background-size:cover;background-position:center top;border:2px solid var(--line);background-color:var(--dark)}
+.roster-card.featured .avatar{border-color:var(--gold);width:100px;height:100px}
+.roster-card .role{color:var(--theme2);font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.roster-card.featured .role{color:var(--gold)}
+.roster-card .name{font-family:'Montserrat',sans-serif;font-weight:900;font-size:20px;color:#fff;letter-spacing:-.5px;margin-bottom:4px}
+.roster-card.featured .name{font-size:24px}
+.roster-card .real{color:var(--mute);font-size:11px;letter-spacing:.5px}
+
+/* CHRONICLE TABLE */
+.table-wrap{background:var(--dark3);border:1px solid var(--line);overflow:hidden}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead{background:var(--dark2)}
+th{text-align:left;padding:14px 16px;color:var(--dim);font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;border-bottom:1px solid var(--line)}
+td{padding:12px 16px;border-bottom:1px solid var(--line);vertical-align:middle}
+tbody tr{transition:.15s}
+tbody tr:hover{background:rgba(124,58,237,.08)}
+tbody tr:last-child td{border-bottom:none}
+tbody tr.win-row{background:rgba(34,197,94,.06)}
+tbody tr.win-row:hover{background:rgba(34,197,94,.12)}
+.col-num{color:var(--mute);width:40px;text-align:center}
+.col-date{color:var(--mute);white-space:nowrap;font-family:'Roboto',monospace}
+.col-tour{color:#fff;font-weight:500}
+.col-team{color:var(--theme2);white-space:nowrap}
+.col-result{font-weight:700;white-space:nowrap}
+.col-result.loss{color:var(--red)}
+.col-result.win{color:var(--green)}
+.col-score{font-family:'Roboto',monospace;color:var(--dim)}
+.chron-row{cursor:pointer;transition:.15s}
+.chron-row:hover{background:rgba(124,58,237,.12)!important}
+.chron-row .col-num::after{content:" ▸";color:var(--mute);font-size:9px;letter-spacing:0}
+.chron-row.open .col-num::after{content:" ▾";color:var(--theme2)}
+.chron-detail td{padding:0;border-bottom:1px solid var(--line);background:var(--dark2)}
+.chron-detail-inner{max-height:0;overflow:hidden;transition:max-height .35s ease;padding:0 16px}
+.chron-detail.open .chron-detail-inner{padding:16px 18px 22px}
+.chron-detail-text{color:var(--dim);font-size:13.5px;line-height:1.85;border-left:2px solid var(--theme2);padding-left:16px}
+.chron-detail-text b{color:var(--gold)}
+.chron-detail-text .tag{color:var(--theme2);font-weight:700}
+.sec-hint{margin-top:18px;color:var(--mute);font-size:12px;letter-spacing:1.5px}
+.sec-hint::before{content:"▸ ";color:var(--theme2)}
+
+/* FOOTER */
+.footer{background:#060810;border-top:1px solid var(--line);padding:60px 0 32px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:50px}
+.footer-logo{font-family:'Montserrat',sans-serif;font-weight:900;font-size:26px;color:#fff;letter-spacing:-1px;margin-bottom:14px}
+.footer-logo span{color:var(--theme2)}
+.footer-desc{color:var(--mute);font-size:13px;line-height:1.7;margin-bottom:20px}
+.footer-social{display:flex;gap:12px}
+.footer-social a{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;transition:.2s}
+.footer-social a:hover{border-color:var(--theme2);color:var(--theme2)}
+.footer-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:#fff;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px}
+.footer-list{list-style:none}
+.footer-list li{margin-bottom:10px}
+.footer-list a{color:var(--dim);font-size:13px}
+.footer-list a:hover{color:var(--theme2)}
+.footer-contact p{color:var(--dim);font-size:13px;margin-bottom:8px}
+.footer-contact p b{color:#fff}
+.footer-copy{text-align:center;padding-top:30px;border-top:1px solid var(--line);color:var(--mute);font-size:11px;letter-spacing:1px}
+.footer-copy b{color:var(--gold)}
+
+/* RESPONSIVE */
+@media (max-width:980px){
+  .nav{display:none}
+  .menu-toggle{display:block}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:30px}
+  .match-card{grid-template-columns:100px 1fr auto;gap:16px}
+  .match-actions{display:none}
+  .niko-feature{grid-template-columns:1fr}
+  .niko-feature-img{min-height:340px;background-size:cover;background-position:center}
+  .niko-feature-img::after{background:linear-gradient(180deg,transparent 50%,var(--dark3))}
+  .niko-feature-body{padding:32px 22px}
+  .niko-feature-name{font-size:42px}
+  .niko-feature-meta{grid-template-columns:1fr 1fr;gap:14px}
+  .niko-feature-quote{font-size:14px;padding-left:14px}
+  .roster-list{grid-template-columns:repeat(2,1fr)}
+  .story-grid{grid-template-columns:1fr}
+  .hide-md{display:none}
+  .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .table-wrap table{min-width:520px}
+}
+@media (max-width:680px){
+  .container{padding:0 18px}
+  .section{padding:60px 0}
+  .stats-bar{grid-template-columns:repeat(2,1fr)}
+  .stat-cell:nth-child(2){border-right:none}
+  .stat-cell:nth-child(1),.stat-cell:nth-child(2){border-bottom:1px solid var(--line)}
+  .stat-num{font-size:38px}
+  .footer-grid{grid-template-columns:1fr}
+  .match-card{grid-template-columns:1fr;text-align:center;gap:14px;padding:22px 18px}
+  .match-logos{justify-content:center}
+  .team-logo-img{width:42px;height:42px}
+  .hero h1{font-size:44px;letter-spacing:-2px}
+  .hero{padding:90px 0 60px}
+  .hero-desc{font-size:15px}
+  .hero-sub{font-size:16px;letter-spacing:2px}
+  .hero-cta{flex-direction:column;align-items:stretch}
+  .btn{justify-content:center;padding:14px 20px;font-size:11px;min-height:48px}
+  .sb-main{grid-template-columns:1fr;gap:20px}
+  .sb-score{font-size:56px}
+  .sb-team .logo-circle{width:80px;height:80px}
+  .sb-team .name{font-size:18px}
+  .sb-maps{grid-template-columns:1fr}
+  .sb-map{padding:12px 8px}
+  .sb-map .map-score{font-size:20px}
+  th,td{padding:11px 10px;font-size:12px}
+  .table-wrap table{min-width:380px}
+  .niko-feature-meta{grid-template-columns:1fr 1fr;gap:12px}
+  .niko-feature-name{font-size:38px}
+  .niko-feature-body{padding:28px 20px}
+  .niko-feature-img{min-height:280px}
+  .niko-feature-quote{font-size:13px;line-height:1.7;padding-left:12px}
+  .roster-list{grid-template-columns:repeat(2,1fr)}
+  .roster-card{padding:20px 14px}
+  .roster-card .avatar{width:70px;height:70px}
+  .roster-card.featured .avatar{width:88px;height:88px}
+  .roster-card .name{font-size:18px}
+  .roster-card.featured .name{font-size:22px}
+  .story-body{padding:22px 18px}
+  .story-title{font-size:18px}
+  .story-excerpt{font-size:13px}
+  .poem{font-size:18px;letter-spacing:2px;line-height:1.9}
+  .poem .line.gold{font-size:22px;letter-spacing:3px}
+  .sec-title{font-size:32px}
+  .sec-head{margin-bottom:36px}
+  .footer{padding:50px 0 28px}
+  .footer-grid{gap:30px;margin-bottom:36px}
+  .footer-list li{margin-bottom:12px}
+  .footer-list a{display:block;padding:4px 0;font-size:14px}
+  .pl-logo{font-size:36px}
+  .col-team{display:none}
+  .hide-sm{display:none}
+  .menu-toggle{padding:8px 10px;min-width:44px;min-height:44px}
+}
+@media (max-width:420px){
+  .container{padding:0 14px}
+  .hero h1{font-size:36px}
+  .hero-tag{font-size:10px;padding:7px 16px;letter-spacing:2px}
+  .niko-feature-name{font-size:36px}
+  .niko-feature-meta{grid-template-columns:1fr}
+  .roster-list{grid-template-columns:1fr;max-width:280px;margin:0 auto}
+  .stat-num{font-size:32px}
+  .sec-title{font-size:26px}
+  .match-card{padding:18px 14px}
+  .sb-score{font-size:48px}
+  .pl-logo{font-size:30px}
+}
+</style>
 </head>
 <body>
-  <div class="site-shell">
-    <header class="topbar">
-      <a class="brand" href="#home" aria-label="NiKo Tears Chronicle">
-        <span class="brand-mark">18</span>
-        <span class="brand-copy">
-          <strong>NiKo Tears Chronicle</strong>
-          <small id="brand-subline"></small>
-        </span>
-      </a>
 
-      <nav class="site-nav" aria-label="Section navigation">
-        <a href="#overview" id="nav-overview"></a>
-        <a href="#chapters" id="nav-chapters"></a>
-        <a href="#chronicle" id="nav-chronicle"></a>
-        <a href="#timeline" id="nav-timeline"></a>
-        <a href="#legacy" id="nav-legacy"></a>
+<!-- PRELOADER -->
+<div class="preloader" id="preloader">
+  <div class="pl-logo">NiKo<span>.</span></div>
+  <div class="pl-sub" data-i="pl-sub">Loading Chronicle</div>
+  <div class="pl-bar"></div>
+</div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="#top" class="logo">NiKo<span>.</span>Chronicle</a>
+      <nav class="nav">
+        <a href="#hero" data-i="nav-home">Home</a>
+        <a href="#final" data-i="nav-final">Final</a>
+        <a href="#feature" data-i="nav-feature">NiKo</a>
+        <a href="#story" data-i="nav-story">Story</a>
+        <a href="#poem" data-i="nav-poem">Poem</a>
+        <a href="#roster" data-i="nav-roster">Roster</a>
+        <a href="#chronicle" data-i="nav-chronicle">Chronicle</a>
       </nav>
-
-      <div class="lang-switch" role="group" aria-label="Language switcher">
-        <button type="button" class="lang-btn is-active" data-lang-btn="zh">中文</button>
-        <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
-      </div>
-    </header>
-
-    <main id="home">
-      <section class="hero">
-        <div class="hero-stage">
-          <div class="hero-slides" id="hero-slides" aria-live="polite"></div>
-          <div class="hero-dots" id="hero-dots" aria-label="Hero slides"></div>
-        </div>
-
-        <aside class="hero-rail" aria-label="Editorial summary">
-          <p class="panel-kicker" id="rail-kicker"></p>
-          <h2 id="rail-title"></h2>
-          <p class="rail-summary" id="rail-summary"></p>
-          <div class="hero-stat-grid" id="hero-stat-grid"></div>
-        </aside>
-      </section>
-
-      <section class="section" id="overview">
-        <div class="section-head">
-          <p class="section-kicker" id="overview-kicker"></p>
-          <h2 id="overview-title"></h2>
-          <p class="section-intro" id="overview-intro"></p>
-        </div>
-
-        <div class="overview-grid">
-          <article class="overview-lead">
-            <p class="lead-tag" id="overview-lead-tag"></p>
-            <h3 id="overview-lead-title"></h3>
-            <p class="lead-body" id="overview-lead-body"></p>
-            <div class="overview-note" id="overview-lead-note"></div>
-          </article>
-          <div class="milestone-grid" id="milestone-grid"></div>
-        </div>
-      </section>
-
-      <section class="section" id="chapters">
-        <div class="section-head">
-          <p class="section-kicker" id="chapter-kicker"></p>
-          <h2 id="chapter-title"></h2>
-          <p class="section-intro" id="chapter-intro"></p>
-        </div>
-        <div class="chapter-grid" id="chapter-grid"></div>
-      </section>
-
-      <section class="section" id="chronicle">
-        <div class="section-head">
-          <p class="section-kicker" id="chronicle-kicker"></p>
-          <h2 id="chronicle-title"></h2>
-          <p class="section-intro" id="chronicle-intro"></p>
-        </div>
-
-        <div class="table-wrap">
-          <table class="chronicle-table">
-            <thead>
-              <tr>
-                <th id="th-number"></th>
-                <th id="th-date"></th>
-                <th id="th-event"></th>
-                <th id="th-team"></th>
-                <th id="th-result"></th>
-                <th id="th-note"></th>
-              </tr>
-            </thead>
-            <tbody id="chronicle-body"></tbody>
-          </table>
-        </div>
-      </section>
-
-      <section class="section" id="timeline">
-        <div class="section-head">
-          <p class="section-kicker" id="timeline-kicker"></p>
-          <h2 id="timeline-title"></h2>
-          <p class="section-intro" id="timeline-intro"></p>
-        </div>
-        <div class="timeline" id="timeline-root"></div>
-      </section>
-
-      <section class="section legacy-section" id="legacy">
-        <div class="section-head legacy-head">
-          <p class="section-kicker" id="legacy-kicker"></p>
-          <h2 id="legacy-title"></h2>
-          <p class="section-intro" id="legacy-intro"></p>
-        </div>
-
-        <div class="legacy-layout">
-          <div class="legacy-grid" id="legacy-grid"></div>
-          <article class="closing-card">
-            <div class="closing-kicker" id="closing-kicker"></div>
-            <blockquote id="closing-quote"></blockquote>
-            <div class="closing-copy" id="closing-copy"></div>
-          </article>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="footer-logo">18</div>
-          <p class="footer-desc" id="footer-desc"></p>
-          <p class="footer-copy" id="footer-copy"></p>
-        </div>
-
-        <div>
-          <h3 class="footer-title" id="footer-nav-title"></h3>
-          <div class="footer-links" id="footer-links"></div>
-        </div>
-
-        <div>
-          <h3 class="footer-title" id="footer-about-title"></h3>
-          <div class="footer-notes" id="footer-notes"></div>
-        </div>
-      </div>
-    </footer>
+      <button class="lang-btn" id="langBtn">EN / 中文</button>
+      <button class="menu-toggle" id="menuToggle">☰</button>
+    </div>
   </div>
+</header>
 
-  <script src="./assets/site.js"></script>
+<!-- HERO CAROUSEL (3 slides, all with local images) -->
+<section class="hero" id="hero">
+  <div class="hero-slide active">
+    <div class="hero-bg" style="background-image:url('assets/img/hero1-niko.jpg')"></div>
+    <div class="container">
+      <div class="hero-inner">
+        <span class="hero-tag" data-i="hero1-tag">IEM Cologne Major 2026 · Champions</span>
+        <h1 data-i="hero1-title">The <span class="accent">Redemption</span></h1>
+        <p class="hero-sub" data-i="hero1-sub">灭蜂斩龙擒黑豹 · 问鼎科隆终成王</p>
+        <p class="hero-desc" data-i="hero1-desc">Eleven years. Eighteen Majors. Seventeen heartbreaks. On June 21, 2026, at the LANXESS Arena, NiKo finally lifted the trophy he had chased for over a decade — a 3:0 sweep of FURIA, a curse broken, a king crowned.</p>
+        <div class="hero-cta">
+          <a href="#final" class="btn btn-primary" data-i="hero1-cta1">View Final</a>
+          <a href="#story" class="btn btn-outline" data-i="hero1-cta2">Read Story</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-slide">
+    <div class="hero-bg" style="background-image:url('assets/img/hero2-sina.jpg')"></div>
+    <div class="container">
+      <div class="hero-inner">
+        <span class="hero-tag" data-i="hero2-tag">Grand Final · BO5 · 3:0</span>
+        <h1 data-i="hero2-title">The <span class="accent">3:0 Sweep</span></h1>
+        <p class="hero-sub" data-i="hero2-sub">三图全胜 · 13:8 · 13:8 · 13:8</p>
+        <p class="hero-desc" data-i="hero2-desc">Mirage, Anubis, Inferno — three maps, three identical scorelines. NiKo dropped 52 kills against 32 deaths, ADR 85. The series MVP. The most dominant Major final sweep in CS2 history.</p>
+        <div class="hero-cta">
+          <a href="#final" class="btn btn-primary" data-i="hero2-cta1">Match Details</a>
+          <a href="#story" class="btn btn-outline" data-i="hero2-cta2">Read Story</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-slide">
+    <div class="hero-bg" style="background-image:url('assets/img/cologne-arena.png')"></div>
+    <div class="container">
+      <div class="hero-inner">
+        <span class="hero-tag" data-i="hero3-tag">Eleven Years · One Trophy</span>
+        <h1 data-i="hero3-title">A <span class="accent">Decade</span> Redeemed</h1>
+        <p class="hero-sub" data-i="hero3-sub">十年生涯 · 一冠圆满</p>
+        <p class="hero-desc" data-i="hero3-desc">From Cluj-Napoca 2015 to Cologne 2026 — through Boston heartbreak, Stockholm tears, Rio humiliation. Eighteen Majors of chasing, seventeen of falling. And then, on one night in Cologne, the chase ended.</p>
+        <div class="hero-cta">
+          <a href="#chronicle" class="btn btn-primary" data-i="hero3-cta1">Full Chronicle</a>
+          <a href="#stats" class="btn btn-outline" data-i="hero3-cta2">The Numbers</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-dots" id="heroDots">
+    <button class="hero-dot active" data-slide="0"></button>
+    <button class="hero-dot" data-slide="1"></button>
+    <button class="hero-dot" data-slide="2"></button>
+  </div>
+</section>
+
+<!-- FINAL SCOREBOARD -->
+<section class="section" id="final">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-sub" data-i="final-sub">Grand Final · BO5</span>
+      <h2 class="sec-title" data-i="final-title">The <span class="accent">3:0 Sweep</span></h2>
+    </div>
+    <div class="scoreboard">
+      <div class="sb-meta"><span data-i="final-venue">LANXESS Arena, Cologne</span> · <b>2026.06.21</b></div>
+      <div class="sb-main">
+        <div class="sb-team">
+          <div class="logo-circle"><img src="assets/img/logo-falcons.png" alt="Falcons"></div>
+          <div class="name">Falcons</div>
+          <div class="region" data-i="region-eu">Europe</div>
+        </div>
+        <div class="sb-score">3<span class="colon">:</span>0</div>
+        <div class="sb-team">
+          <div class="logo-circle"><img src="assets/img/logo-furia.png" alt="FURIA"></div>
+          <div class="name">FURIA</div>
+          <div class="region" data-i="region-br">Brazil</div>
+        </div>
+      </div>
+      <div class="sb-maps">
+        <div class="sb-map"><div class="map-name">Mirage</div><div class="map-score"><span class="w">13</span> : <span class="l">8</span></div></div>
+        <div class="sb-map"><div class="map-name">Anubis</div><div class="map-score"><span class="w">13</span> : <span class="l">8</span></div></div>
+        <div class="sb-map"><div class="map-name">Inferno</div><div class="map-score"><span class="w">13</span> : <span class="l">8</span></div></div>
+      </div>
+      <div class="sb-mvp">
+        <div class="mvp-label" data-i="mvp-label">Series MVP</div>
+        <div class="mvp-name">NiKo</div>
+        <div class="mvp-stats"><b>52</b> K / <b>32</b> D · ADR <b>85</b> · <span data-i="mvp-note">First Major Trophy</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MATCHES -->
+<section class="section bg-dark" id="matches">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-sub" data-i="match-sub">Cologne Major 2026 Run</span>
+      <h2 class="sec-title" data-i="match-title">Road to the <span class="accent">Throne</span></h2>
+    </div>
+    <div class="match-card">
+      <div class="match-logos">
+        <img src="assets/img/logo-falcons.png" class="team-logo-img" alt="Falcons">
+        <span class="match-vs">vs</span>
+        <img src="assets/img/logo-furia.png" class="team-logo-img" alt="FURIA">
+      </div>
+      <div class="match-info">
+        <h3>Falcons <span>vs</span> FURIA</h3>
+        <p data-i="m1-meta">Grand Final · BO5 · LANXESS Arena · 2026.06.21</p>
+      </div>
+      <div class="match-score win">3 : 0</div>
+      <div class="match-actions"><button class="icon-btn">★</button></div>
+    </div>
+    <div class="match-card">
+      <div class="match-logos">
+        <img src="assets/img/logo-falcons.png" class="team-logo-img" alt="Falcons">
+        <span class="match-vs">vs</span>
+        <img src="assets/img/logo-spirit.png" class="team-logo-img" alt="Spirit">
+      </div>
+      <div class="match-info">
+        <h3>Falcons <span>vs</span> Team Spirit</h3>
+        <p data-i="m2-meta">Semi-Final · BO3 · 2026.06.20</p>
+      </div>
+      <div class="match-score win">2 : 0</div>
+      <div class="match-actions"><button class="icon-btn">★</button></div>
+    </div>
+    <div class="match-card">
+      <div class="match-logos">
+        <img src="assets/img/logo-falcons.png" class="team-logo-img" alt="Falcons">
+        <span class="match-vs">vs</span>
+        <img src="assets/img/logo-g2.png" class="team-logo-img" alt="G2">
+      </div>
+      <div class="match-info">
+        <h3>Falcons <span>vs</span> G2 Esports</h3>
+        <p data-i="m3-meta">Quarter-Final · BO3 · 2026.06.19</p>
+      </div>
+      <div class="match-score win">2 : 1</div>
+      <div class="match-actions"><button class="icon-btn">★</button></div>
+    </div>
+    <div class="match-card">
+      <div class="match-logos">
+        <img src="assets/img/logo-falcons.png" class="team-logo-img" alt="Falcons">
+        <span class="match-vs">vs</span>
+        <img src="assets/img/logo-aurora.png" class="team-logo-img" alt="Aurora">
+      </div>
+      <div class="match-info">
+        <h3>Falcons <span>vs</span> Aurora</h3>
+        <p data-i="m4-meta">Round of 8 · BO3 · 2026.06.18</p>
+      </div>
+      <div class="match-score win">2 : 0</div>
+      <div class="match-actions"><button class="icon-btn">★</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- NIKO FEATURE -->
+<section class="section bg-darker" id="feature">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-sub" data-i="feature-sub">The Champion</span>
+      <h2 class="sec-title" data-i="feature-title">The <span class="accent">Redeemed</span></h2>
+    </div>
+    <div class="niko-feature">
+      <div class="niko-feature-img" style="background-image:url('assets/img/niko-wallpaper.png')"></div>
+      <div class="niko-feature-body">
+        <div class="niko-feature-tag" data-i="nf-tag">Series MVP · Grand Final</div>
+        <div class="niko-feature-name">NiKo</div>
+        <div class="niko-feature-real" data-i="nf-real">Nikola Kovač · Bosnia &amp; Herzegovina</div>
+        <div class="niko-feature-meta">
+          <div class="niko-meta-item">
+            <div class="lab" data-i="nf-age">Age</div>
+            <div class="val">29</div>
+          </div>
+          <div class="niko-meta-item">
+            <div class="lab" data-i="nf-team">Team</div>
+            <div class="val gold">Falcons</div>
+          </div>
+          <div class="niko-meta-item">
+            <div class="lab" data-i="nf-debut">Pro Debut</div>
+            <div class="val">2014</div>
+          </div>
+          <div class="niko-meta-item">
+            <div class="lab" data-i="nf-trophy">Major Trophy</div>
+            <div class="val gold">1st · Cologne 2026</div>
+          </div>
+        </div>
+        <div class="niko-feature-quote" data-i="nf-quote">"困住他的，从不是枪法，是心魔。今夜心魔消散，迟来的Major王座，终于稳稳落在了他的手里。"</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="section bg-dark" id="story">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-sub" data-i="story-sub">The Coronation</span>
+      <h2 class="sec-title" data-i="story-title">A <span class="accent">Decade</span> Redeemed</h2>
+    </div>
+    <div class="story-grid">
+      <div class="story-card">
+        <div class="story-img" style="background-image:url('assets/img/story1.jpg')">
+          <span class="story-cat" data-i="s1-cat">Chapter 01</span>
+        </div>
+        <div class="story-body">
+          <div class="story-num">01 · <span data-i="s1-num">The Stage</span></div>
+          <h3 class="story-title" data-i="s1-title">朗盛竞技场，万众屏息</h3>
+          <p class="story-excerpt" data-i="s1-excerpt">那是2026科隆Major的决赛赛场，一场熬走十余年遗憾、击碎全网嘲讽的封神全胜碾压。整座电竞殿堂人声鼎沸，只剩下键鼠敲击的脆响、道具爆破的轰鸣，与千万观众悬在嗓子眼的心跳。FURIA背负着巴西赛区全村的希望，教父FalleN迎来生涯最后一届Major冲冠之旅。</p>
+          <p class="story-meta" data-i="s1-meta">June 21, 2026 · LANXESS Arena</p>
+        </div>
+      </div>
+      <div class="story-card">
+        <div class="story-img" style="background-image:url('assets/img/story2.jpg')">
+          <span class="story-cat" data-i="s2-cat">Chapter 02</span>
+        </div>
+        <div class="story-body">
+          <div class="story-num">02 · <span data-i="s2-num">The Curse</span></div>
+          <h3 class="story-title" data-i="s2-title">"软脚虾"的标签</h3>
+          <p class="story-excerpt" data-i="s2-excerpt">外界所有人心里都压着一个刻板定论：只要站上Major决赛舞台，NiKo一定会软脚。波士顿、斯德哥尔摩——一场场痛失冠军的画面，早被观众刻成了甩不掉的魔咒标签。Falcons坐拥银河战舰豪华阵容，却长久困在NiKo的决赛心魔里。Major冠军奖杯，永远隔着一层捅不破的窗户纸。</p>
+          <p class="story-meta" data-i="s2-meta">Boston 2018 · Stockholm 2021</p>
+        </div>
+      </div>
+      <div class="story-card">
+        <div class="story-img" style="background-image:url('assets/img/story3.jpg')">
+          <span class="story-cat" data-i="s3-cat">Chapter 03</span>
+        </div>
+        <div class="story-body">
+          <div class="story-num">03 · <span data-i="s3-num">The Breakout</span></div>
+          <h3 class="story-title" data-i="s3-title">撕碎枷锁</h3>
+          <p class="story-excerpt" data-i="s3-excerpt">NiKo架住点位、稳住呼吸，预瞄精准如标尺。没有决赛惯有的慌乱手抖，没有关键回合犹豫空枪。Anubis半场5比7落后的危局里，他水下联动匪跳瞬发四杀，枪声接连炸开，硬生生把濒临崩盘的比分拽回均势。</p>
+          <p class="story-meta" data-i="s3-meta">Anubis · Map 2 · Four-Kill Spray</p>
+        </div>
+      </div>
+      <div class="story-card">
+        <div class="story-img" style="background-image:url('assets/img/story4.jpg')">
+          <span class="story-cat" data-i="s4-cat">Chapter 04</span>
+        </div>
+        <div class="story-body">
+          <div class="story-num">04 · <span data-i="s4-num">The Crown</span></div>
+          <h3 class="story-title" data-i="s4-title">王座落定</h3>
+          <p class="story-excerpt" data-i="s4-excerpt">对面FalleN带队疯狂追分拉扯，狂哥、卡神轮番打出高光击杀，试图复刻逆风翻盘的戏码。可这一晚的NiKo，再也没有给宿命重演的机会。配合m0NESY、kyousuke的火力联动，一局一局蚕食对手的经济与心态。三图打完，比分定格在干脆利落的3:0横扫。</p>
+          <p class="story-meta" data-i="s4-meta">Falcons 3:0 FURIA · Champions</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POEM -->
+<section class="poem-section" id="poem">
+  <div class="container">
+    <div class="poem-wrap">
+      <div class="poem-label" data-i="poem-label">A Fan's Tribute</div>
+      <div class="poem">
+        <span class="line" data-i="poem-l1">十年生涯，四年粉丝</span>
+        <span class="line" data-i="poem-l2">大虾高举双钳，威风不似当年</span>
+        <span class="line gold" data-i="poem-l3">灭蜂斩龙擒黑豹，问鼎科隆终成王</span>
+      </div>
+      <div class="poem-credit" data-i="poem-credit">一枪一念 · 岁岁逐光 — <b>NiKo</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section bg-dark" id="stats">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-sub" data-i="stats-sub">By The Numbers</span>
+      <h2 class="sec-title" data-i="stats-title">The <span class="accent">Toll</span></h2>
+    </div>
+    <div class="stats-bar">
+      <div class="stat-cell"><div class="stat-num purple">18</div><div class="stat-label" data-i="stat-majors">Majors Played</div></div>
+      <div class="stat-cell"><div class="stat-num red">17</div><div class="stat-label" data-i="stat-heartbreaks">Heartbreaks</div></div>
+      <div class="stat-cell"><div class="stat-num green">1</div><div class="stat-label" data-i="stat-trophy">Major Trophy</div></div>
+      <div class="stat-cell"><div class="stat-num gold">11</div><div class="stat-label" data-i="stat-years">Years Chasing</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CHRONICLE TABLE -->
+<section class="section bg-darker" id="chronicle">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-sub" data-i="chron-sub">2015 — 2026</span>
+      <h2 class="sec-title" data-i="chron-title">Major <span class="accent">Chronicle</span></h2>
+      <p class="sec-hint" data-i="chron-hint">Tap any row to unfold the story</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th data-i="th-date">Date</th>
+            <th data-i="th-tour">Tournament</th>
+            <th class="hide-md" data-i="th-team">Team</th>
+            <th data-i="th-result">Result</th>
+            <th data-i="th-score">Score</th>
+          </tr>
+        </thead>
+        <tbody id="chronBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ROSTER -->
+<section class="section bg-dark" id="roster">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-sub" data-i="roster-sub">Champions · Cologne 2026</span>
+      <h2 class="sec-title" data-i="roster-title">Falcons <span class="accent">Roster</span></h2>
+    </div>
+    <div class="roster-list">
+      <div class="roster-card featured">
+        <div class="avatar" style="background-image:url('assets/img/niko-wallpaper.png')"></div>
+        <div class="role" data-i="p1-role">Rifler · MVP</div>
+        <div class="name">NiKo</div>
+        <div class="real">Nikola Kovač</div>
+      </div>
+      <div class="roster-card">
+        <div class="avatar" style="background-image:url('assets/img/player-karrigan.png')"></div>
+        <div class="role" data-i="p2-role">IGL</div>
+        <div class="name">karrigan</div>
+        <div class="real">Finn Andersen</div>
+      </div>
+      <div class="roster-card">
+        <div class="avatar" style="background-image:url('assets/img/player-m0nesy.png')"></div>
+        <div class="role" data-i="p3-role">AWPer</div>
+        <div class="name">m0NESY</div>
+        <div class="real">Ilya Osipov</div>
+      </div>
+      <div class="roster-card">
+        <div class="avatar" style="background-image:url('assets/img/player-teses.png')"></div>
+        <div class="role" data-i="p4-role">Rifler</div>
+        <div class="name">TeSeS</div>
+        <div class="real">René Madsen</div>
+      </div>
+      <div class="roster-card">
+        <div class="avatar" style="background-image:url('assets/img/player-kyousuke.jpg')"></div>
+        <div class="role" data-i="p5-role">Rifler</div>
+        <div class="name">kyousuke</div>
+        <div class="real">Cristian Radu</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">NiKo<span>.</span>Chronicle</div>
+        <p class="footer-desc" data-i="footer-desc">A fan-made tribute to Nikola "NiKo" Kovač — eleven years of chasing, one trophy earned. IEM Cologne Major 2026 Champions.</p>
+      </div>
+      <div>
+        <h4 class="footer-title" data-i="ft-cat">Categories</h4>
+        <ul class="footer-list">
+          <li><a href="#hero" data-i="ft-home">Home</a></li>
+          <li><a href="#story" data-i="ft-story">Story</a></li>
+          <li><a href="#matches" data-i="ft-match">Matches</a></li>
+          <li><a href="#roster" data-i="ft-roster">Roster</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-title" data-i="ft-help">Quick Links</h4>
+        <ul class="footer-list">
+          <li><a href="#chronicle" data-i="ft-chron">Chronicle</a></li>
+          <li><a href="#stats" data-i="ft-stats">Stats</a></li>
+          <li><a href="#poem" data-i="ft-poem">Poem</a></li>
+          <li><a href="#feature" data-i="ft-niko">NiKo</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-copy" data-i="footer-copy">© 2026 · Fan Tribute · <b>NiKo</b> · 18 Majors · 1 Trophy</div>
+  </div>
+</footer>
+
+<script>
+const I18N = {
+  en: {
+    "pl-sub":"Loading Chronicle",
+    "nav-home":"Home","nav-final":"Final","nav-feature":"NiKo","nav-story":"Story","nav-poem":"Poem","nav-roster":"Roster","nav-chronicle":"Chronicle",
+    "hero1-tag":"IEM Cologne Major 2026 · Champions",
+    "hero1-title":'The <span class="accent">Redemption</span>',
+    "hero1-sub":"Crushed the Wasps, Slew the Dragons, Caught the Panther",
+    "hero1-desc":"Eleven years. Eighteen Majors. Seventeen heartbreaks. On June 21, 2026, at the LANXESS Arena, NiKo finally lifted the trophy he had chased for over a decade — a 3:0 sweep of FURIA, a curse broken, a king crowned.",
+    "hero1-cta1":"View Final","hero1-cta2":"Read Story",
+    "hero2-tag":"Grand Final · BO5 · 3:0",
+    "hero2-title":'The <span class="accent">3:0 Sweep</span>',
+    "hero2-sub":"Three Maps · Three Sweeps · 13:8 · 13:8 · 13:8",
+    "hero2-desc":"Mirage, Anubis, Inferno — three maps, three identical scorelines. NiKo dropped 52 kills against 32 deaths, ADR 85. The series MVP. The most dominant Major final sweep in CS2 history.",
+    "hero2-cta1":"Match Details","hero2-cta2":"Read Story",
+    "hero3-tag":"Eleven Years · One Trophy",
+    "hero3-title":'A <span class="accent">Decade</span> Redeemed',
+    "hero3-sub":"Ten Years A Career · One Trophy A Lifetime",
+    "hero3-desc":"From Cluj-Napoca 2015 to Cologne 2026 — through Boston heartbreak, Stockholm tears, Rio humiliation. Eighteen Majors of chasing, seventeen of falling. And then, on one night in Cologne, the chase ended.",
+    "hero3-cta1":"Full Chronicle","hero3-cta2":"The Numbers",
+    "final-sub":"Grand Final · BO5","final-title":'The <span class="accent">3:0 Sweep</span>',
+    "final-venue":"LANXESS Arena, Cologne","region-eu":"Europe","region-br":"Brazil",
+    "mvp-label":"Series MVP","mvp-note":"First Major Trophy",
+    "match-sub":"Cologne Major 2026 Run","match-title":'Road to the <span class="accent">Throne</span>',
+    "m1-meta":"Grand Final · BO5 · LANXESS Arena · 2026.06.21",
+    "m2-meta":"Semi-Final · BO3 · 2026.06.20",
+    "m3-meta":"Quarter-Final · BO3 · 2026.06.19",
+    "m4-meta":"Round of 8 · BO3 · 2026.06.18",
+    "feature-sub":"The Champion","feature-title":'The <span class="accent">Redeemed</span>',
+    "nf-tag":"Series MVP · Grand Final","nf-real":"Nikola Kovač · Bosnia & Herzegovina",
+    "nf-age":"Age","nf-team":"Team","nf-debut":"Pro Debut","nf-trophy":"Major Trophy",
+    "nf-quote":'"What trapped him was never his aim. It was the demon in his head. Tonight the demon dissolved. The throne, long delayed, finally settled on his shoulders."',
+    "story-sub":"The Coronation","story-title":'A <span class="accent">Decade</span> Redeemed',
+    "s1-cat":"Chapter 01","s1-num":"The Stage","s1-title":"LANXESS Arena — A Nation Holds Its Breath",
+    "s1-excerpt":"Cologne Major 2026, the grand final. A coronation that dissolved a decade of regret and shattered every meme the internet had thrown at him. The arena was deafening — keyboards clicking, utility booming, millions of hearts suspended in their throats. FURIA carried an entire Brazilian scene. The godfather FalleN — his last Major title run.",
+    "s1-meta":"June 21, 2026 · LANXESS Arena",
+    "s2-cat":"Chapter 02","s2-num":"The Curse","s2-title":'The "Choker" Label',
+    "s2-excerpt":"Everyone carried the same assumption: put NiKo on a Major final stage, he would crumble. Boston. Stockholm — frame after frame of heartbreak, burned into collective memory as an unshakeable curse. Falcons had a superteam on paper, but they were trapped in NiKo's final-demon. The Major trophy was always one pane of glass away — never broken.",
+    "s2-meta":"Boston 2018 · Stockholm 2021",
+    "s3-cat":"Chapter 03","s3-num":"The Breakout","s3-title":"The Shackles Shattered",
+    "s3-excerpt":"No one expected this. NiKo held his angle, breathed steady, crosshair placed like a ruler. No shaking hands, no hesitant whiffs. On Anubis, when the scoreline tilted 5-7 against them, he dropped a four-man spray from underwater — dragging a collapsing round back to even. What used to be his weakness was now an impenetrable wall.",
+    "s3-meta":"Anubis · Map 2 · Four-Kill Spray",
+    "s4-cat":"Chapter 04","s4-num":"The Crown","s4-title":"The Throne Settles",
+    "s4-excerpt":"FalleN rallied FURIA into frantic chases. KSCERATO, drop — high-frags everywhere, trying to script another comeback. But this NiKo gave fate no second chance. With m0NESY and kyousuke firing alongside him, he ate away at their economy and their minds. Three maps done. Scoreline froze at a clinical 3:0. The curse shattered under the lights.",
+    "s4-meta":"Falcons 3:0 FURIA · Champions",
+    "poem-label":"A Fan's Tribute",
+    "poem-l1":"Ten years a career, four years a fan",
+    "poem-l2":"The shrimp raises both claws — no longer the old swagger",
+    "poem-l3":"Crushed the Wasps, Slew the Dragons, Caught the Panther — Crowned in Cologne",
+    "poem-credit":'One shot, one thought — chasing the light, year after year — <b>NiKo</b>',
+    "stats-sub":"By The Numbers","stats-title":'The <span class="accent">Toll</span>',
+    "stat-majors":"Majors Played","stat-heartbreaks":"Heartbreaks","stat-trophy":"Major Trophy","stat-years":"Years Chasing",
+    "chron-sub":"2015 — 2026","chron-title":'Major <span class="accent">Chronicle</span>',
+    "chron-hint":"Tap any row to unfold the story",
+    "th-date":"Date","th-tour":"Tournament","th-team":"Team","th-result":"Result","th-score":"Score",
+    "qf":"Quarter-Final","sf":"Semi-Final","final":"Runner-Up","group":"Group Stage","rmr":"DNQ (RMR)",
+    "5-8":"5–8th","9-11":"9–11th","12-14":"12–14th","win":"Champions",
+    "roster-sub":"Champions · Cologne 2026","roster-title":'Falcons <span class="accent">Roster</span>',
+    "p1-role":"Rifler · MVP","p2-role":"IGL","p3-role":"AWPer","p4-role":"Rifler","p5-role":"Rifler",
+    "footer-desc":'A fan-made tribute to Nikola "NiKo" Kovač — eleven years of chasing, one trophy earned. IEM Cologne Major 2026 Champions.',
+    "ft-cat":"Categories","ft-home":"Home","ft-story":"Story","ft-match":"Matches","ft-roster":"Roster",
+    "ft-help":"Quick Links","ft-chron":"Chronicle","ft-stats":"Stats","ft-poem":"Poem","ft-niko":"NiKo",
+    "ft-contact":"Contact","footer-copy":"© 2026 · Fan Tribute · <b>NiKo</b> · 18 Majors · 1 Trophy"
+  },
+  zh: {
+    "pl-sub":"加载编年史中",
+    "nav-home":"首页","nav-final":"决赛","nav-feature":"NiKo","nav-story":"故事","nav-poem":"诗","nav-roster":"阵容","nav-chronicle":"编年",
+    "hero1-tag":"IEM科隆Major 2026 · 冠军",
+    "hero1-title":'<span class="accent">封神</span>之路',
+    "hero1-sub":"灭蜂斩龙擒黑豹 · 问鼎科隆终成王",
+    "hero1-desc":"十一年，十八届Major，十七次心碎。2026年6月21日，朗盛竞技场，NiKo终于捧起追逐十余年的奖杯——3:0横扫FURIA，诅咒破碎，王者加冕。",
+    "hero1-cta1":"查看决赛","hero1-cta2":"阅读故事",
+    "hero2-tag":"总决赛 · BO5 · 3:0",
+    "hero2-title":'<span class="accent">3:0</span> 横扫',
+    "hero2-sub":"三图全胜 · 13:8 · 13:8 · 13:8",
+    "hero2-desc":"Mirage、Anubis、Inferno——三张地图，三个相同比分。NiKo砍下52杀32死，ADR 85，系列赛MVP。CS2历史上最具统治力的Major决赛横扫。",
+    "hero2-cta1":"比赛详情","hero2-cta2":"阅读故事",
+    "hero3-tag":"十一年 · 一冠",
+    "hero3-title":'<span class="accent">十年</span>救赎',
+    "hero3-sub":"十年生涯 · 一冠圆满",
+    "hero3-desc":"从2015克卢日纳波卡到2026科隆——历经波士顿心碎、斯德哥尔摩泪水、里约屈辱。十八届Major的追逐，十七次的跌倒。然后，在科隆的一个夜晚，追逐终结了。",
+    "hero3-cta1":"完整编年","hero3-cta2":"数据见证",
+    "final-sub":"总决赛 · BO5","final-title":'<span class="accent">3:0</span> 横扫',
+    "final-venue":"朗盛竞技场，科隆","region-eu":"欧洲","region-br":"巴西",
+    "mvp-label":"系列赛MVP","mvp-note":"首座Major冠军",
+    "match-sub":"科隆Major 2026征程","match-title":'通往<span class="accent">王座</span>之路',
+    "m1-meta":"总决赛 · BO5 · 朗盛竞技场 · 2026.06.21",
+    "m2-meta":"半决赛 · BO3 · 2026.06.20",
+    "m3-meta":"四分之一决赛 · BO3 · 2026.06.19",
+    "m4-meta":"八强赛 · BO3 · 2026.06.18",
+    "feature-sub":"冠军","feature-title":'<span class="accent">封神</span>之人',
+    "nf-tag":"系列赛MVP · 总决赛","nf-real":"尼古拉·科瓦奇 · 波黑",
+    "nf-age":"年龄","nf-team":"战队","nf-debut":"出道年份","nf-trophy":"Major冠军",
+    "nf-quote":'"困住他的，从不是枪法，是心魔。今夜心魔消散，迟来的Major王座，终于稳稳落在了他的手里。"',
+    "story-sub":"封神加冕","story-title":'<span class="accent">十年</span>救赎',
+    "s1-cat":"第一章","s1-num":"舞台","s1-title":"朗盛竞技场，万众屏息",
+    "s1-excerpt":"那是2026科隆Major的决赛赛场，一场熬走十余年遗憾、击碎全网嘲讽的封神全胜碾压。整座电竞殿堂人声鼎沸，只剩下键鼠敲击的脆响、道具爆破的轰鸣，与千万观众悬在嗓子眼的心跳。FURIA背负着巴西赛区全村的希望，教父FalleN迎来生涯最后一届Major冲冠之旅。",
+    "s1-meta":"2026年6月21日 · 朗盛竞技场",
+    "s2-cat":"第二章","s2-num":"心魔","s2-title":'"软脚虾"的标签',
+    "s2-excerpt":"外界所有人心里都压着一个刻板定论：只要站上Major决赛舞台，NiKo一定会软脚。波士顿、斯德哥尔摩——一场场痛失冠军的画面，早被观众刻成了甩不掉的魔咒标签。Falcons坐拥银河战舰豪华阵容，却长久困在NiKo的决赛心魔里。Major冠军奖杯，永远隔着一层捅不破的窗户纸。",
+    "s2-meta":"波士顿2018 · 斯德哥尔摩2021",
+    "s3-cat":"第三章","s3-num":"破局","s3-title":"撕碎枷锁",
+    "s3-excerpt":"NiKo架住点位、稳住呼吸，预瞄精准如标尺。没有决赛惯有的慌乱手抖，没有关键回合犹豫空枪。Anubis半场队伍一度5比7落后的危局里，他水下联动匪跳瞬发四杀，枪声接连炸开，硬生生把濒临崩盘的比分拽回均势。",
+    "s3-meta":"Anubis · 第二图 · 四杀扫射",
+    "s4-cat":"第四章","s4-num":"加冕","s4-title":"王座落定",
+    "s4-excerpt":"对面FalleN带队疯狂追分拉扯，狂哥、卡神轮番打出高光击杀，试图复刻逆风翻盘的戏码。可这一晚的NiKo，再也没有给宿命重演的机会。配合m0NESY、kyousuke的火力联动，一局一局蚕食对手的经济与心态。三图打完，比分定格在干脆利落的3:0横扫。",
+    "s4-meta":"Falcons 3:0 FURIA · 冠军",
+    "poem-label":"粉丝致敬",
+    "poem-l1":"十年生涯，四年粉丝",
+    "poem-l2":"大虾高举双钳，威风不似当年",
+    "poem-l3":"灭蜂斩龙擒黑豹，问鼎科隆终成王",
+    "poem-credit":'一枪一念 · 岁岁逐光 — <b>NiKo</b>',
+    "stats-sub":"数据见证","stats-title":'<span class="accent">代价</span>',
+    "stat-majors":"Major参赛","stat-heartbreaks":"心碎次数","stat-trophy":"Major冠军","stat-years":"追逐年数",
+    "chron-sub":"2015 — 2026","chron-title":'Major <span class="accent">编年史</span>',
+    "chron-hint":"点击任意一行，展开那年发生的故事",
+    "th-date":"日期","th-tour":"赛事","th-team":"战队","th-result":"成绩","th-score":"比分",
+    "qf":"八强","sf":"四强","final":"亚军","group":"小组出局","rmr":"未晋级(RMR)",
+    "5-8":"5–8名","9-11":"9–11名","12-14":"12–14名","win":"冠军",
+    "roster-sub":"冠军阵容 · 科隆2026","roster-title":'Falcons <span class="accent">阵容</span>',
+    "p1-role":"步枪手 · MVP","p2-role":"指挥","p3-role":"狙击手","p4-role":"步枪手","p5-role":"步枪手",
+    "footer-desc":'粉丝致敬 Nikola "NiKo" Kovač —— 十一年追逐，一冠圆满。IEM科隆Major 2026冠军。',
+    "ft-cat":"分类","ft-home":"首页","ft-story":"故事","ft-match":"比赛","ft-roster":"阵容",
+    "ft-help":"快速链接","ft-chron":"编年","ft-stats":"数据","ft-poem":"诗","ft-niko":"NiKo",
+    "ft-contact":"联系","footer-copy":"© 2026 · 粉丝致敬 · <b>NiKo</b> · 18届Major · 1座冠军"
+  }
+};
+
+const MAJORS = [
+  {date:"2015-11",tour:"ESL One Cluj-Napoca",t:"mousesports",r:"qf",sc:"0–2",
+   d:"At 18, NiKo's first Major. mousesports fell 0-2 to eventual champions EnVyUs in the quarters. The Bosnian prodigy already flashed terrifying aim — no one knew this was the start of an eleven-year chase.",
+   dz:"18岁的NiKo第一次站上Major舞台。mousesports在八强0-2不敌最终冠军EnVyUs。年轻的波黑天才已经展现出恐怖的个人能力——没有人知道，这是一场长达十一年追逐的起点。"},
+  {date:"2016-03",tour:"MLG Columbus",t:"mousesports",r:"5-8",sc:"0–2",
+   d:"Columbus — mousesports exited 0-2 in the quarterfinal stage. NiKo's individual numbers stayed elite, but the roster around him wasn't built to go deeper. The 'best rifler in the world' label began to stick.",
+   dz:"哥伦布——mousesports在四分之一决赛阶段0-2出局。NiKo的个人数据依旧顶级，但身边阵容不足以走得更远。'世界最强步枪手'的称号开始在他身上扎根。"},
+  {date:"2016-07",tour:"ESL One Cologne",t:"mousesports",r:"qf",sc:"0–2",
+   d:"Home soil, Cologne. mousesports stopped at the quarters again, 0-2. NiKo dragged the team through groups with superhuman carry, but a single-core roster exposed its ceiling the moment the knockout stage began.",
+   dz:"主场作战的科隆Major。mousesports八强0-2再次止步。NiKo在小组赛阶段carry全队晋级，但单核阵容的短板在淘汰赛硬仗面前暴露无遗。"},
+  {date:"2017-01",tour:"ELEAGUE Atlanta",t:"FaZe",r:"qf",sc:"1–2",
+   d:"First Major after the FaZe move. The new superteam fell 1-2 in the quarters. NiKo and karrigan's first Major partnership showed chemistry — but a title was still one step too far.",
+   dz:"转会FaZe后的首届Major。全新的银河战舰在八强1-2惜败。NiKo与karrigan的首次Major合作展现了化学反应——但距离冠军，仍差那一步。"},
+  {date:"2017-07",tour:"PGL Krakow",t:"FaZe",r:"9-11",sc:"1–2",
+   d:"PGL Krakow — FaZe shockingly crashed out in groups, finishing 9-11th. Roster synergy collapsed; NiKo's form wobbled. One of the worst Major results of his entire career.",
+   dz:"PGL克拉科夫——FaZe在小组赛阶段意外出局，仅列9-11名。新阵容的磨合问题彻底爆发，NiKo个人表现起伏。这是他整个Major生涯最差的成绩之一。"},
+  {date:"2018-01",tour:"ELEAGUE Boston",t:"FaZe",r:"final",sc:"1–2",
+   d:"Boston — where the heartbreak began. FaZe led 2-1 in the grand final against C9, one map from the trophy. On Inferno, overtime, NiKo whiffed a critical angle. The series flipped 1-2. That night, the 'choker' label was first nailed to his name.",
+   dz:"波士顿——心碎的起点。FaZe在总决赛2-1领先C9，距离冠军只差一张图。Inferno图三加时赛，NiKo关键回合空枪，比分被翻成1-2。那个夜晚，'软脚虾'的标签第一次钉在了他的身上。"},
+  {date:"2018-09",tour:"FACEIT London",t:"FaZe",r:"sf",sc:"1–2",
+   d:"FACEIT London — FaZe reached the semis, fell 1-2 to NaVi. NiKo poured everything in, but peak s1mple swallowed it whole. Another Major, another near-miss.",
+   dz:"FACEIT伦敦——FaZe杀入四强，1-2不敌NaVi。NiKo拼尽全力，但巅峰s1mple吞噬了一切。又一届Major，又一次擦肩而过。"},
+  {date:"2019-02",tour:"IEM Katowice",t:"FaZe",r:"12-14",sc:"1–2",
+   d:"IEM Katowice — FaZe bombed out in groups at 12-14th. The team looked lost, NiKo unable to carry a sinking ship. This was the beginning of the FaZe dynasty's collapse.",
+   dz:"IEM卡托维兹——FaZe小组赛阶段1-2出局，仅列12-14名。队伍状态迷失，NiKo独木难支。这是FaZe王朝瓦解的开端。"},
+  {date:"2019-08",tour:"StarLadder Berlin",t:"FaZe",r:"5-8",sc:"0–2",
+   d:"StarLadder Berlin — FaZe exited 0-2 in the quarterfinal stage. NiKo's last Major in FaZe colors; the dynasty was already in its twilight. Reports of his departure surfaced immediately after.",
+   dz:"StarLadder柏林——FaZe在四分之一决赛阶段0-2出局。这是NiKo在FaZe的最后一届Major，王朝已近黄昏。赛后被传出他将离队的消息。"},
+  {date:"2021-11",tour:"PGL Stockholm",t:"G2",r:"sf",sc:"1–2",
+   d:"First Major after joining G2. PGL Stockholm — G2 reached the semis, lost 1-2 to NaVi. The NiKo–huNter- cousin duo lit up the arena, but peak s1mple ended the run again. Cameras caught NiKo in tears at the player desk.",
+   dz:"转会G2后的首届Major。PGL斯德哥尔摩——G2杀入四强，1-2不敌NaVi。NiKo与huNter-的兄弟组合闪耀全场，但巅峰s1mple让一切努力化为乌有。镜头捕捉到NiKo在选手席泪流满面。"},
+  {date:"2022-05",tour:"PGL Antwerp",t:"G2",r:"5-8",sc:"0–2",
+   d:"PGL Antwerp — G2 exited 0-2 in the quarterfinal stage. NiKo's individual stats remained tier-one, but an aging tactical system couldn't break through the elite. Another 5-8th, another what-if.",
+   dz:"PGL安特卫普——G2在四分之一决赛阶段0-2出局。NiKo的个人数据依然是顶级，但战术体系老化，无法突破顶级强队的封锁。又一个5-8名，又一个'如果当时'。"},
+  {date:"2022-10",tour:"IEM Rio RMR",t:"G2",r:"rmr",sc:"DNQ",
+   d:"Rio Major — the darkest hour. G2 crashed out in the RMR qualifier, failing to even reach the main event. NiKo's first Major absence. The mockery was relentless: 'Can't even qualify' became the new tag.",
+   dz:"里约Major——最黑暗的时刻。G2在RMR预选赛爆冷出局，无缘正赛。这是NiKo生涯第一次缺席Major，外界的嘲讽铺天盖地：'连Major都进不去'成了新的标签。"},
+  {date:"2023-05",tour:"BLAST Paris",t:"G2",r:"sf",sc:"0–2",
+   d:"BLAST Paris — G2 reached the semis, swept 0-2 by Vitality. NiKo fell in the semifinals again, one step from the grand final. Peak ZywOo left G2 with no answers. The 'semifinal curse' took shape.",
+   dz:"BLAST巴黎——G2杀入四强，0-2被Vitality横扫。NiKo再次在半决赛倒下，距离决赛仅一步。巅峰ZywOo让G2无力招架。'半决赛魔咒'开始成型。"},
+  {date:"2024-03",tour:"PGL Copenhagen",t:"G2",r:"5-8",sc:"0–2",
+   d:"PGL Copenhagen — G2 exited 0-2 in the quarterfinal stage. An aging roster couldn't keep up; NiKo carried the weight alone but couldn't tip the scales. Post-event whispers: 'his prime is over.'",
+   dz:"PGL哥本哈根——G2在四分之一决赛阶段0-2出局。阵容老化问题凸显，NiKo独撑大局却无力回天。赛后被质疑：'他的巅峰已经过去了。'"},
+  {date:"2024-12",tour:"PW Shanghai",t:"G2",r:"5-8",sc:"1–2",
+   d:"PW Shanghai Major — G2 fell 1-2 in the quarterfinal stage. NiKo gave everything on map three, but overtime slipped away. His last Major in a G2 jersey; transfer rumors swirled immediately.",
+   dz:"PW上海Major——G2在四分之一决赛阶段1-2惜败。NiKo在图三拼尽全力，但加时赛功亏一篑。这是他在G2的最后一届Major，转会传闻赛后被引爆。"},
+  {date:"2025-06",tour:"BLAST Austin",t:"Falcons",r:"sf",sc:"1–2",
+   d:"First Major after joining Falcons. BLAST Austin — the superteam reached the semis, lost 1-2. The NiKo–karrigan–m0NESY triangle began to click, but another semifinal exit kept the 'no-Major' curse alive.",
+   dz:"转会Falcons后的首届Major。BLAST奥斯汀——银河战舰杀入四强，1-2惜败。NiKo与新队友karrigan、m0NESY的化学反应初现，但又一次半决赛出局，'无冠魔咒'仍在继续。"},
+  {date:"2025-12",tour:"PW Belgrade",t:"Falcons",r:"final",sc:"1–2",
+   d:"PW Belgrade — the second heartbreak. Falcons reached the grand final, lost 1-2. On map three, NiKo's controversial mistake in a clutch round reignited the 'choker' mockery. A second Major runner-up finish — and it hurt more than the first.",
+   dz:"PW贝尔格莱德——第二次心碎。Falcons杀入总决赛，1-2惜败。图三关键残局，NiKo的争议性失误再次点燃了'软脚虾'的嘲讽。第二座Major亚军——比第一次更痛。"},
+  {date:"2026-06",tour:"IEM Cologne Major",t:"Falcons",r:"win",sc:"3–0",
+   d:"Cologne — the coronation. Falcons swept FURIA 3-0 in the grand final, all three maps 13:8. NiKo dropped 52-32, ADR 85, series MVP. Eleven years, eighteen Majors, seventeen heartbreaks — all ended in one night. The 'choker' tag was torn apart by his own hands. The throne, at last, settled.",
+   dz:"科隆——封神之夜。Falcons在总决赛3-0横扫FURIA，三图均13:8。NiKo砍下52杀32死，ADR 85，系列赛MVP。十一年、十八届、十七次心碎，在这一夜终结。'软脚虾'的标签被亲手撕碎，王座终于稳稳落定。"}
+];
+
+let LANG = (navigator.language||"en").toLowerCase().startsWith("zh") ? "zh" : "en";
+
+function tr(k){return I18N[LANG][k]||k}
+function applyI18n(){
+  document.querySelectorAll("[data-i]").forEach(el=>{
+    const k = el.getAttribute("data-i");
+    if(I18N[LANG][k] !== undefined) el.innerHTML = I18N[LANG][k];
+  });
+  document.getElementById("langBtn").textContent = LANG === "en" ? "EN / 中文" : "中文 / EN";
+  document.documentElement.lang = LANG === "zh" ? "zh-CN" : "en";
+}
+function resultLabel(code){
+  const map={win:"win",qf:"qf",sf:"sf",final:"final",group:"group",rmr:"rmr","5-8":"5-8","9-11":"9-11","12-14":"12-14"};
+  return tr(map[code]||code);
+}
+function renderChronicle(){
+  const body=document.getElementById("chronBody");
+  body.innerHTML="";
+  MAJORS.forEach((m,i)=>{
+    const cls = m.r==="win" ? "win-row" : "";
+    const rcls = m.r==="win" ? "win" : "loss";
+    const desc = LANG==="zh" ? m.dz : m.d;
+    const tr_el=document.createElement("tr");
+    tr_el.className="chron-row "+cls;
+    tr_el.innerHTML=
+      '<td class="col-num">'+(i+1)+'</td>'+
+      '<td class="col-date">'+m.date+'</td>'+
+      '<td class="col-tour">'+m.tour+'</td>'+
+      '<td class="col-team hide-md">'+m.t+'</td>'+
+      '<td class="col-result '+rcls+'">'+resultLabel(m.r)+'</td>'+
+      '<td class="col-score">'+m.sc+'</td>';
+    const detail=document.createElement("tr");
+    detail.className="chron-detail";
+    detail.innerHTML='<td colspan="6"><div class="chron-detail-inner"><div class="chron-detail-text">'+desc+'</div></div></td>';
+    tr_el.addEventListener("click",()=>{
+      const isOpen = detail.classList.toggle("open");
+      tr_el.classList.toggle("open", isOpen);
+      const inner = detail.querySelector(".chron-detail-inner");
+      inner.style.maxHeight = isOpen ? inner.scrollHeight + 40 + "px" : "0px";
+    });
+    body.appendChild(tr_el);
+    body.appendChild(detail);
+  });
+}
+
+let slideIdx = 0;
+const slides = document.querySelectorAll(".hero-slide");
+const dots = document.querySelectorAll(".hero-dot");
+function showSlide(n){
+  slides.forEach((s,i)=>s.classList.toggle("active", i===n));
+  dots.forEach((d,i)=>d.classList.toggle("active", i===n));
+  slideIdx = n;
+}
+function nextSlide(){ showSlide((slideIdx+1) % slides.length); }
+dots.forEach((d,i)=>d.addEventListener("click", ()=>{showSlide(i);clearInterval(heroTimer);heroTimer=setInterval(nextSlide,6000);}));
+let heroTimer = setInterval(nextSlide, 6000);
+
+window.addEventListener("scroll", ()=>{
+  const h = document.getElementById("header");
+  if(window.scrollY > 60) h.classList.add("scrolled"); else h.classList.remove("scrolled");
+});
+window.addEventListener("load", ()=>{
+  setTimeout(()=>document.getElementById("preloader").classList.add("hide"), 700);
+});
+document.getElementById("langBtn").addEventListener("click", ()=>{
+  LANG = LANG === "en" ? "zh" : "en";
+  applyI18n();
+  renderChronicle();
+});
+document.getElementById("menuToggle").addEventListener("click", ()=>{
+  const nav = document.querySelector(".nav");
+  if(nav.style.display === "flex"){ nav.style.display = ""; }
+  else {
+    nav.style.display = "flex";
+    nav.style.flexDirection = "column";
+    nav.style.position = "absolute";
+    nav.style.top = "60px";
+    nav.style.right = "24px";
+    nav.style.background = "var(--dark2)";
+    nav.style.padding = "20px";
+    nav.style.border = "1px solid var(--line)";
+    nav.style.gap = "14px";
+  }
+});
+
+applyI18n();
+renderChronicle();
+</script>
 </body>
 </html>
