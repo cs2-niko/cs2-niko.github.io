@@ -1,24 +1,84 @@
 const uiCopy = {
   zh: {
-    brandSubline: "中英双语版 Major 梦碎年表",
-    heroEyebrow: "Counter-Strike Editorial",
-    heroTitle: "男人一生只哭十八次",
-    heroSubtitle: "NiKo 的 Major 梦碎史",
-    heroTagline:
-      "他是 Counter-Strike 历史上最伟大的步枪手之一。沙鹰像艺术，AK 像教材。但在 Major 这个最高舞台，命运总像差了半步。这个站点把那十八次心碎，做成一条可以切换中英双语的时间线。",
-    heroPrimary: "进入时间线",
-    heroSecondary: "查看传奇履历",
-    panelKicker: "Snapshot",
-    panelNote:
-      "两次打进 Major 决赛，零座 Major 奖杯。越接近传奇，越接近遗憾。",
-    timelineKicker: "Timeline",
-    timelineTitle: "十八次心碎，一条看完",
+    brandSubline: "中英双语电竞专题版",
+    navOverview: "概览",
+    navChapters: "章节",
+    navChronicle: "编年",
+    navTimeline: "长文",
+    navLegacy: "履历",
+    railKicker: "Editorial Snapshot",
+    railTitle: "十八次梦碎，一位顶级步枪手的 Major 长夜",
+    railSummary:
+      "参考你给的 HTML，把原本站点升级成更像电竞专题页的结构：更强的首屏、更清楚的章节切分、更好扫读的编年表，以及仍然完整保留的双语长时间线。",
+    heroSlides: [
+      {
+        tag: "Counter-Strike Editorial",
+        title: "男人一生只哭十八次",
+        subtitle: "NiKo 的 Major 梦碎史",
+        desc:
+          "他是 Counter-Strike 历史上最伟大的步枪手之一。沙鹰像艺术，AK 像教材。但到了 Major，命运总像差了半步。",
+        primary: "查看编年",
+        primaryHref: "#chronicle",
+        secondary: "阅读长文",
+        secondaryHref: "#timeline"
+      },
+      {
+        tag: "Boston · Stockholm · Rio",
+        title: "三个节点，三种疼法",
+        subtitle: "赛点崩塌、史诗空枪、连门票都没拿到",
+        desc:
+          "Boston 2018 的最后一步，Stockholm 2021 的三发 deagle，Rio 2022 的 RMR 出局，几乎把这个故事最痛的几种形状都写完了。",
+        primary: "看关键节点",
+        primaryHref: "#overview",
+        secondary: "进入时间线",
+        secondaryHref: "#timeline"
+      },
+      {
+        tag: "Legacy Beyond Trophies",
+        title: "没有 Major，也还是 NiKo",
+        subtitle: "传奇从来不只由一座奖杯定义",
+        desc:
+          "奖杯迟迟不来，不代表职业生涯就失去分量。正因为他已经伟大，这条缺口才会显得更刺眼。",
+        primary: "看传奇履历",
+        primaryHref: "#legacy",
+        secondary: "回到首屏",
+        secondaryHref: "#home"
+      }
+    ],
+    overviewKicker: "Overview",
+    overviewTitle: "先用几组数字，快速读懂这段故事",
+    overviewIntro:
+      "不是所有遗憾都需要一口气看完。这一屏先把最关键、最刺痛、最常被回放的几个节点摆出来。",
+    overviewLeadTag: "Editorial Lens",
+    overviewLeadTitle: "离传奇只差一座杯，但离心碎从来不远",
+    overviewLeadBody:
+      "从 Boston 的赛点到 Stockholm 的三枪，从 Antwerp 看前队夺冠到 Rio 连正赛都没进去，NiKo 的 Major 故事不是缺少高光，而是高光总在最后一步拐成遗憾。",
+    overviewLeadNote:
+      "这版页面借用了你给的参考稿的专题结构，但叙事仍然忠于“梦碎史”本身，没有改写成另一条平行宇宙。",
+    chapterKicker: "Chapters",
+    chapterTitle: "把 2015 到 2026 切成四个篇章",
+    chapterIntro:
+      "从 mousesports 的少年天才，到 FaZe 的最近一次，再到 G2 的个人巅峰和 Falcons 的未完尾音，故事终于不再只是一列卡片。",
+    chronicleKicker: "Chronicle",
+    chronicleTitle: "一眼扫过 2015-2026",
+    chronicleIntro:
+      "如果你只是想快速定位某一届 Major，先看这里。日期、战队、结果和那一届留下的钩子都在这一张表里。",
+    chronicleHeaders: {
+      number: "#",
+      date: "日期",
+      event: "赛事节点",
+      team: "战队",
+      result: "结果",
+      note: "记忆点"
+    },
+    timelineKicker: "Long Read",
+    timelineTitle: "十八次梦碎，慢慢看完",
     timelineIntro:
-      "从 2015 的 mousesports 首秀，到 Falcons 时期继续追逐，这里按时间展开每一次 Major 赛场上的失利、错失与差一点。",
+      "完整情境、阶段背景、为什么会痛、为什么会被反复提起，仍然保留在这里。想一口气读完，时间线还在。",
     legacyKicker: "Legacy",
-    legacyTitle: "没有 Major，也仍是传奇",
+    legacyTitle: "没有 Major，也仍然是传奇模板",
     legacyIntro:
-      "NiKo 的职业生涯不需要靠单一奖杯来证明，但 Major 的缺口，恰恰构成了这个故事最刺痛的部分。",
+      "奖杯没有替他收尾，但他的步枪能力、个人履历和历史位置，依然足够把名字留在 Counter-Strike 的正中央。",
     closingKicker: "Final Note",
     closingQuote: "“如果 2021 斯德哥尔摩那三发 deagle 里，哪怕只有一发命中……”",
     closingCopy: [
@@ -26,44 +86,103 @@ const uiCopy = {
       "但 Major 冠军始终没有落到他手里。波士顿的赛点、斯德哥尔摩的空枪、离开 FaZe 后看着前队夺冠，这些瞬间不断被回放，像命运故意留下的钩子。",
       "也正因为这样，这条时间线才成立。不是为了定义 NiKo，而是为了记录一个伟大选手离终极荣誉总差一点点的漫长追逐。"
     ],
-    footer1: "NiKo Tears Timeline · 中文 / English bilingual edition",
-    footer2: "Base material adapted from the user-provided HTML guide.",
-    footer3: "Built as a static site structure ready for a GitHub Pages repository named niko.github.io.",
+    footerDesc:
+      "NiKo Tears Chronicle：基于你提供的 HTML 参考稿，重构成适合 GitHub Pages 展示的双语电竞专题页。",
+    footerCopy: "Static site · Chinese / English · GitHub Pages ready",
+    footerNavTitle: "分区",
+    footerAboutTitle: "说明",
+    footerNotes: [
+      "保留“Major 梦碎史”的核心叙事，而不是直接套用另一条夺冠故事线。",
+      "页面结构参考专题稿：首屏、章节卡、编年表、长时间线与更完整的页脚。",
+      "相关图片尽量本地化处理，方便直接同步到远程仓库。"
+    ],
     stats: [
       { value: "18", tone: "pink", label: "次梦碎" },
       { value: "2", tone: "blue", label: "次亚军" },
       { value: "0", tone: "gold", label: "座 Major" },
       { value: "11+", tone: "blue", label: "年追逐" }
-    ],
-    cryLabelPrefix: "第",
-    cryLabelSuffix: "次流泪",
-    oneLineSpecial: {
-      "06": "第六次流泪 · 最痛之一",
-      "10": "第十次流泪 · 史诗级心碎",
-      "12": "第十二次流泪 · 至暗时刻",
-      "18": "第十八次流泪 · 进行中"
-    }
+    ]
   },
   en: {
-    brandSubline: "Bilingual Major heartbreak archive",
-    heroEyebrow: "Counter-Strike Editorial",
-    heroTitle: "Eighteen Times a Man Cries",
-    heroSubtitle: "NiKo and the Major That Never Lands",
-    heroTagline:
-      "One of the greatest riflers in Counter-Strike history. His Desert Eagle feels like art, his AK like a textbook. Yet on the biggest stage, the Major always slips one step away. This site turns those eighteen heartbreaks into a bilingual timeline.",
-    heroPrimary: "Open the timeline",
-    heroSecondary: "See the legacy",
-    panelKicker: "Snapshot",
-    panelNote:
-      "Two Major grand finals, zero Major trophies. The closer the legend gets, the sharper the regret becomes.",
-    timelineKicker: "Timeline",
-    timelineTitle: "Eighteen heartbreaks, one scroll",
+    brandSubline: "Bilingual editorial feature",
+    navOverview: "Overview",
+    navChapters: "Chapters",
+    navChronicle: "Chronicle",
+    navTimeline: "Long Read",
+    navLegacy: "Legacy",
+    railKicker: "Editorial Snapshot",
+    railTitle: "Eighteen heartbreaks, one elite rifler, one endless Major night",
+    railSummary:
+      "Using the provided HTML as visual direction, this version turns the original site into a fuller editorial package: stronger hero treatment, cleaner chaptering, a scan-friendly chronicle table, and the complete bilingual long-form timeline underneath.",
+    heroSlides: [
+      {
+        tag: "Counter-Strike Editorial",
+        title: "Eighteen Times a Man Cries",
+        subtitle: "NiKo and the Major That Never Lands",
+        desc:
+          "One of the greatest riflers in Counter-Strike history. His Desert Eagle feels like art, his AK like a textbook. Yet on the Major stage, fate keeps stopping half a step short.",
+        primary: "Open the chronicle",
+        primaryHref: "#chronicle",
+        secondary: "Read the long version",
+        secondaryHref: "#timeline"
+      },
+      {
+        tag: "Boston · Stockholm · Rio",
+        title: "Three landmarks, three kinds of pain",
+        subtitle: "Match point collapse, the all-time miss, then no ticket at all",
+        desc:
+          "Boston 2018, Stockholm 2021, and the Rio 2022 RMR each represent a different shape of heartbreak, which is exactly why they keep coming back in every retelling.",
+        primary: "See the key scars",
+        primaryHref: "#overview",
+        secondary: "Open timeline",
+        secondaryHref: "#timeline"
+      },
+      {
+        tag: "Legacy Beyond Trophies",
+        title: "Still NiKo without the Major",
+        subtitle: "One missing trophy cannot shrink the rest",
+        desc:
+          "The title never arrives, but the career remains huge. The absence hurts precisely because the player himself is already historically great.",
+        primary: "See the legacy",
+        primaryHref: "#legacy",
+        secondary: "Back to top",
+        secondaryHref: "#home"
+      }
+    ],
+    overviewKicker: "Overview",
+    overviewTitle: "Read the whole story through a few numbers first",
+    overviewIntro:
+      "Not every regret has to be read in one sitting. This layer surfaces the key nodes first: the closest miss, the darkest moment, and the wound that never stops replaying.",
+    overviewLeadTag: "Editorial Lens",
+    overviewLeadTitle: "One trophy short of closure, never far from heartbreak",
+    overviewLeadBody:
+      "From Boston match point to the Stockholm deagle miss, from Antwerp watching former teammates win to Rio not even reaching the Major, NiKo's story does not lack highlights. It lacks a last step that stays intact.",
+    overviewLeadNote:
+      "This redesign borrows the editorial rhythm of the reference HTML, but keeps the heartbreak chronicle intact instead of replacing it with a different championship arc.",
+    chapterKicker: "Chapters",
+    chapterTitle: "Split 2015 through 2026 into four eras",
+    chapterIntro:
+      "From the prodigy years in mousesports, to FaZe's closest run, to G2's personal peak and the Falcons epilogue still hanging in the air, the story now reads in eras rather than one long strip.",
+    chronicleKicker: "Chronicle",
+    chronicleTitle: "Scan the whole 2015-2026 arc at once",
+    chronicleIntro:
+      "If you want the fast version first, start here. Date, team, result, and the specific scar each Major left behind are all mapped into one table.",
+    chronicleHeaders: {
+      number: "#",
+      date: "Date",
+      event: "Event",
+      team: "Team",
+      result: "Result",
+      note: "Hook"
+    },
+    timelineKicker: "Long Read",
+    timelineTitle: "Eighteen heartbreaks, slowly this time",
     timelineIntro:
-      "From the 2015 mousesports debut to the Falcons era, this is the running record of every Major setback, collapse, near miss, and almost.",
+      "The fuller context is still here: why each exit mattered, why certain moments keep replaying, and how 'almost' changed shape over the years.",
     legacyKicker: "Legacy",
-    legacyTitle: "Still a legend without the Major",
+    legacyTitle: "Still a historical template without the Major",
     legacyIntro:
-      "NiKo does not need one trophy to validate his career. Still, the absence of a Major is exactly what makes this story ache.",
+      "The trophy never closes the story for him, yet the mechanical ceiling, the career record, and the place he holds in Counter-Strike history remain unmistakable.",
     closingKicker: "Final Note",
     closingQuote: "\"If even one of those three deagle shots in Stockholm 2021 had connected...\"",
     closingCopy: [
@@ -71,23 +190,107 @@ const uiCopy = {
       "But the Major trophy never quite arrives. Boston match point, the Stockholm miss, FaZe winning after he left: each moment keeps returning like fate refusing to let the story settle.",
       "That is why this timeline exists. Not to reduce NiKo to a missing prize, but to document the long chase of a great player who keeps ending up one step short of the final honor."
     ],
-    footer1: "NiKo Tears Timeline · Chinese / English bilingual edition",
-    footer2: "Base material adapted from the HTML guide provided by the user.",
-    footer3: "Built as a static site structure ready for a GitHub Pages repository named niko.github.io.",
+    footerDesc:
+      "NiKo Tears Chronicle: rebuilt from the provided HTML guide into a bilingual esports editorial page suitable for GitHub Pages deployment.",
+    footerCopy: "Static site · Chinese / English · GitHub Pages ready",
+    footerNavTitle: "Sections",
+    footerAboutTitle: "About",
+    footerNotes: [
+      "Keeps the original Major heartbreak narrative instead of swapping in a different championship storyline.",
+      "Adopts the reference page's editorial rhythm through a hero package, chapter cards, chronicle table, long-form timeline, and fuller footer.",
+      "Related images are localized wherever possible so the site can be synced cleanly to the remote repo."
+    ],
     stats: [
       { value: "18", tone: "pink", label: "heartbreaks" },
       { value: "2", tone: "blue", label: "runner-up finishes" },
       { value: "0", tone: "gold", label: "Major titles" },
       { value: "11+", tone: "blue", label: "years chasing it" }
-    ],
-    oneLineSpecial: {
-      "06": "Cry No. 6 · one of the most painful",
-      "10": "Cry No. 10 · an all-time heartbreak",
-      "12": "Cry No. 12 · the darkest moment",
-      "18": "Cry No. 18 · still unfolding"
-    }
+    ]
   }
 };
+
+const heroArtwork = [
+  { image: "./assets/media/stage.jpeg", position: "center center" },
+  { image: "./assets/media/hero-niko.webp", position: "center top" },
+  { image: "./assets/media/niko-celebrates.jpg", position: "center center" }
+];
+
+const milestoneIds = ["06", "10", "12", "18"];
+
+const chapterDeck = [
+  {
+    art: { image: "./assets/media/sina-stage.jpg", position: "center center" },
+    value: "4",
+    zh: {
+      meta: "Chapter 01 · mouz",
+      title: "少年天才先学会输",
+      body: "前四次 Major 全部止步前期阶段，但 NiKo 的火力已经先于成绩发光。",
+      statLabel: "届 Major",
+      note: "2015-2017 · mousesports"
+    },
+    en: {
+      meta: "Chapter 01 · mouz",
+      title: "The prodigy learns to lose first",
+      body: "The first four Major runs ended early, but NiKo's firepower was already shining ahead of the results.",
+      statLabel: "Majors",
+      note: "2015-2017 · mousesports"
+    }
+  },
+  {
+    art: { image: "./assets/media/stage.jpeg", position: "center 30%" },
+    value: "1",
+    zh: {
+      meta: "Chapter 02 · FaZe",
+      title: "银河战舰最接近的一次",
+      body: "换队、组豪阵、离奖杯只差最后一步，然后 Boston 把整个故事钉成了历史名场面。",
+      statLabel: "次亚军",
+      note: "2017-2019 · FaZe Clan"
+    },
+    en: {
+      meta: "Chapter 02 · FaZe",
+      title: "The superteam's closest run",
+      body: "New jersey, stacked lineup, one step from the trophy, and then Boston turned the whole arc into Counter-Strike folklore.",
+      statLabel: "runner-up",
+      note: "2017-2019 · FaZe Clan"
+    }
+  },
+  {
+    art: { image: "./assets/media/hero-niko.webp", position: "center top" },
+    value: "2",
+    zh: {
+      meta: "Chapter 03 · G2",
+      title: "个人巅峰换不来终点",
+      body: "Stockholm 的史诗级表现、Antwerp 的反噬、两次 CS2 半决赛，G2 时代把“差一点”写得更精致也更残忍。",
+      statLabel: "次四强",
+      note: "2021-2024 · G2 Esports"
+    },
+    en: {
+      meta: "Chapter 03 · G2",
+      title: "Peak form without the ending",
+      body: "The Stockholm masterpiece, the Antwerp twist, and two CS2 semifinals made the G2 era a more refined and more brutal version of almost.",
+      statLabel: "semifinals",
+      note: "2021-2024 · G2 Esports"
+    }
+  },
+  {
+    art: { image: "./assets/media/falcons-stage.jpg", position: "center center" },
+    value: "?",
+    zh: {
+      meta: "Chapter 04 · Falcons",
+      title: "故事还拖着一个尾音",
+      body: "转入 Falcons 之后，早出局与再度追逐并存。越往后看，越像一段还没被命运写完的尾声。",
+      statLabel: "结局未完",
+      note: "2025-2026 · Team Falcons"
+    },
+    en: {
+      meta: "Chapter 04 · Falcons",
+      title: "The ending is still hanging",
+      body: "The Falcons period mixes fresh early exits with renewed pursuit. The further you go, the more it feels like an epilogue fate still has not finished writing.",
+      statLabel: "ending open",
+      note: "2025-2026 · Team Falcons"
+    }
+  }
+];
 
 const honors = [
   {
@@ -679,22 +882,49 @@ const timeline = [
   }
 ];
 
+const STORAGE_KEY = "niko-chronicle-lang";
 const root = document.documentElement;
-const timelineRoot = document.querySelector("#timeline");
+const heroSlidesRoot = document.querySelector("#hero-slides");
+const heroDotsRoot = document.querySelector("#hero-dots");
+const statRoot = document.querySelector("#hero-stat-grid");
+const milestoneRoot = document.querySelector("#milestone-grid");
+const chapterRoot = document.querySelector("#chapter-grid");
+const chronicleRoot = document.querySelector("#chronicle-body");
+const timelineRoot = document.querySelector("#timeline-root");
 const legacyRoot = document.querySelector("#legacy-grid");
-const statRoot = document.querySelector("#stat-grid");
+const footerLinksRoot = document.querySelector("#footer-links");
+const footerNotesRoot = document.querySelector("#footer-notes");
 const langButtons = document.querySelectorAll("[data-lang-btn]");
 
 const elements = {
   brandSubline: document.querySelector("#brand-subline"),
-  heroEyebrow: document.querySelector("#hero-eyebrow"),
-  heroTitle: document.querySelector("#hero-title"),
-  heroSubtitle: document.querySelector("#hero-subtitle"),
-  heroTagline: document.querySelector("#hero-tagline"),
-  heroPrimary: document.querySelector("#hero-primary"),
-  heroSecondary: document.querySelector("#hero-secondary"),
-  panelKicker: document.querySelector("#panel-kicker"),
-  panelNote: document.querySelector("#panel-note"),
+  navOverview: document.querySelector("#nav-overview"),
+  navChapters: document.querySelector("#nav-chapters"),
+  navChronicle: document.querySelector("#nav-chronicle"),
+  navTimeline: document.querySelector("#nav-timeline"),
+  navLegacy: document.querySelector("#nav-legacy"),
+  railKicker: document.querySelector("#rail-kicker"),
+  railTitle: document.querySelector("#rail-title"),
+  railSummary: document.querySelector("#rail-summary"),
+  overviewKicker: document.querySelector("#overview-kicker"),
+  overviewTitle: document.querySelector("#overview-title"),
+  overviewIntro: document.querySelector("#overview-intro"),
+  overviewLeadTag: document.querySelector("#overview-lead-tag"),
+  overviewLeadTitle: document.querySelector("#overview-lead-title"),
+  overviewLeadBody: document.querySelector("#overview-lead-body"),
+  overviewLeadNote: document.querySelector("#overview-lead-note"),
+  chapterKicker: document.querySelector("#chapter-kicker"),
+  chapterTitle: document.querySelector("#chapter-title"),
+  chapterIntro: document.querySelector("#chapter-intro"),
+  chronicleKicker: document.querySelector("#chronicle-kicker"),
+  chronicleTitle: document.querySelector("#chronicle-title"),
+  chronicleIntro: document.querySelector("#chronicle-intro"),
+  thNumber: document.querySelector("#th-number"),
+  thDate: document.querySelector("#th-date"),
+  thEvent: document.querySelector("#th-event"),
+  thTeam: document.querySelector("#th-team"),
+  thResult: document.querySelector("#th-result"),
+  thNote: document.querySelector("#th-note"),
   timelineKicker: document.querySelector("#timeline-kicker"),
   timelineTitle: document.querySelector("#timeline-title"),
   timelineIntro: document.querySelector("#timeline-intro"),
@@ -704,13 +934,18 @@ const elements = {
   closingKicker: document.querySelector("#closing-kicker"),
   closingQuote: document.querySelector("#closing-quote"),
   closingCopy: document.querySelector("#closing-copy"),
-  footer1: document.querySelector("#footer-line-1"),
-  footer2: document.querySelector("#footer-line-2"),
-  footer3: document.querySelector("#footer-line-3")
+  footerDesc: document.querySelector("#footer-desc"),
+  footerCopy: document.querySelector("#footer-copy"),
+  footerNavTitle: document.querySelector("#footer-nav-title"),
+  footerAboutTitle: document.querySelector("#footer-about-title")
 };
 
+let currentLang = getPreferredLanguage();
+let currentSlide = 0;
+let heroTimer = null;
+
 function getPreferredLanguage() {
-  const saved = window.localStorage.getItem("niko-timeline-lang");
+  const saved = window.localStorage.getItem(STORAGE_KEY);
   if (saved === "zh" || saved === "en") {
     return saved;
   }
@@ -718,23 +953,43 @@ function getPreferredLanguage() {
 }
 
 function setLanguage(lang) {
+  currentLang = lang;
   const copy = uiCopy[lang];
   root.lang = lang === "zh" ? "zh-CN" : "en";
-  window.localStorage.setItem("niko-timeline-lang", lang);
+  window.localStorage.setItem(STORAGE_KEY, lang);
 
   langButtons.forEach((button) => {
     button.classList.toggle("is-active", button.dataset.langBtn === lang);
   });
 
   elements.brandSubline.textContent = copy.brandSubline;
-  elements.heroEyebrow.textContent = copy.heroEyebrow;
-  elements.heroTitle.textContent = copy.heroTitle;
-  elements.heroSubtitle.textContent = copy.heroSubtitle;
-  elements.heroTagline.textContent = copy.heroTagline;
-  elements.heroPrimary.textContent = copy.heroPrimary;
-  elements.heroSecondary.textContent = copy.heroSecondary;
-  elements.panelKicker.textContent = copy.panelKicker;
-  elements.panelNote.textContent = copy.panelNote;
+  elements.navOverview.textContent = copy.navOverview;
+  elements.navChapters.textContent = copy.navChapters;
+  elements.navChronicle.textContent = copy.navChronicle;
+  elements.navTimeline.textContent = copy.navTimeline;
+  elements.navLegacy.textContent = copy.navLegacy;
+  elements.railKicker.textContent = copy.railKicker;
+  elements.railTitle.textContent = copy.railTitle;
+  elements.railSummary.textContent = copy.railSummary;
+  elements.overviewKicker.textContent = copy.overviewKicker;
+  elements.overviewTitle.textContent = copy.overviewTitle;
+  elements.overviewIntro.textContent = copy.overviewIntro;
+  elements.overviewLeadTag.textContent = copy.overviewLeadTag;
+  elements.overviewLeadTitle.textContent = copy.overviewLeadTitle;
+  elements.overviewLeadBody.textContent = copy.overviewLeadBody;
+  elements.overviewLeadNote.textContent = copy.overviewLeadNote;
+  elements.chapterKicker.textContent = copy.chapterKicker;
+  elements.chapterTitle.textContent = copy.chapterTitle;
+  elements.chapterIntro.textContent = copy.chapterIntro;
+  elements.chronicleKicker.textContent = copy.chronicleKicker;
+  elements.chronicleTitle.textContent = copy.chronicleTitle;
+  elements.chronicleIntro.textContent = copy.chronicleIntro;
+  elements.thNumber.textContent = copy.chronicleHeaders.number;
+  elements.thDate.textContent = copy.chronicleHeaders.date;
+  elements.thEvent.textContent = copy.chronicleHeaders.event;
+  elements.thTeam.textContent = copy.chronicleHeaders.team;
+  elements.thResult.textContent = copy.chronicleHeaders.result;
+  elements.thNote.textContent = copy.chronicleHeaders.note;
   elements.timelineKicker.textContent = copy.timelineKicker;
   elements.timelineTitle.textContent = copy.timelineTitle;
   elements.timelineIntro.textContent = copy.timelineIntro;
@@ -743,27 +998,157 @@ function setLanguage(lang) {
   elements.legacyIntro.textContent = copy.legacyIntro;
   elements.closingKicker.textContent = copy.closingKicker;
   elements.closingQuote.textContent = copy.closingQuote;
-  elements.footer1.textContent = copy.footer1;
-  elements.footer2.textContent = copy.footer2;
-  elements.footer3.textContent = copy.footer3;
+  elements.footerDesc.textContent = copy.footerDesc;
+  elements.footerCopy.textContent = copy.footerCopy;
+  elements.footerNavTitle.textContent = copy.footerNavTitle;
+  elements.footerAboutTitle.textContent = copy.footerAboutTitle;
 
+  renderHero(lang);
   renderStats(copy.stats);
+  renderMilestones(lang);
+  renderChapters(lang);
+  renderChronicle(lang);
   renderTimeline(lang);
   renderHonors(lang);
   renderClosingCopy(copy.closingCopy);
+  renderFooter(copy);
+}
+
+function renderHero(lang) {
+  const slides = uiCopy[lang].heroSlides;
+  heroSlidesRoot.innerHTML = slides.map((slide, index) => `
+    <article
+      class="hero-slide${index === currentSlide ? " is-active" : ""}"
+      style="--hero-image: url('${heroArtwork[index].image}'); --hero-position: ${heroArtwork[index].position};"
+    >
+      <div class="hero-copy">
+        <p class="hero-tag">${slide.tag}</p>
+        <h1 class="hero-title">${slide.title}</h1>
+        <p class="hero-subtitle">${slide.subtitle}</p>
+        <p class="hero-desc">${slide.desc}</p>
+        <div class="hero-actions">
+          <a class="hero-link" href="${slide.primaryHref}">${slide.primary}</a>
+          <a class="hero-link is-muted" href="${slide.secondaryHref}">${slide.secondary}</a>
+        </div>
+      </div>
+    </article>
+  `).join("");
+
+  heroDotsRoot.innerHTML = slides.map((slide, index) => `
+    <button
+      type="button"
+      aria-label="${slide.title}"
+      class="${index === currentSlide ? "is-active" : ""}"
+      data-slide-dot="${index}"
+    ></button>
+  `).join("");
+
+  heroDotsRoot.querySelectorAll("[data-slide-dot]").forEach((button) => {
+    button.addEventListener("click", () => {
+      currentSlide = Number(button.dataset.slideDot);
+      syncHeroState();
+      restartHeroTimer();
+    });
+  });
+
+  restartHeroTimer();
+}
+
+function syncHeroState() {
+  const slides = heroSlidesRoot.querySelectorAll(".hero-slide");
+  const dots = heroDotsRoot.querySelectorAll("[data-slide-dot]");
+
+  slides.forEach((slide, index) => {
+    slide.classList.toggle("is-active", index === currentSlide);
+  });
+
+  dots.forEach((dot, index) => {
+    dot.classList.toggle("is-active", index === currentSlide);
+  });
+}
+
+function restartHeroTimer() {
+  stopHeroTimer();
+  heroTimer = window.setInterval(() => {
+    currentSlide = (currentSlide + 1) % heroArtwork.length;
+    syncHeroState();
+  }, 6400);
+}
+
+function stopHeroTimer() {
+  if (heroTimer) {
+    window.clearInterval(heroTimer);
+    heroTimer = null;
+  }
 }
 
 function renderStats(stats) {
-  statRoot.innerHTML = "";
-  stats.forEach((stat) => {
-    const card = document.createElement("article");
-    card.className = "stat-card";
-    card.innerHTML = `
+  statRoot.innerHTML = stats.map((stat) => `
+    <article class="stat-card">
       <strong class="${stat.tone === "pink" ? "is-pink" : stat.tone === "gold" ? "is-gold" : ""}">${stat.value}</strong>
       <span>${stat.label}</span>
+    </article>
+  `).join("");
+}
+
+function renderMilestones(lang) {
+  milestoneRoot.innerHTML = milestoneIds.map((id) => {
+    const entry = timeline.find((item) => item.id === id);
+    const copy = entry[lang];
+
+    return `
+      <article class="milestone-card" data-tone="${entry.tone}">
+        <p class="milestone-tag">${copy.cryLabel}</p>
+        <div class="milestone-top">
+          <span>${copy.date}</span>
+          <span>${copy.teamLabel}</span>
+        </div>
+        <h3>${entry.id}</h3>
+        <p class="milestone-title">${copy.title}</p>
+        <p class="milestone-line">${copy.punchline}</p>
+      </article>
     `;
-    statRoot.appendChild(card);
-  });
+  }).join("");
+}
+
+function renderChapters(lang) {
+  chapterRoot.innerHTML = chapterDeck.map((chapter) => {
+    const copy = chapter[lang];
+    return `
+      <article class="chapter-card">
+        <div
+          class="chapter-visual"
+          style="--chapter-image: url('${chapter.art.image}'); --chapter-position: ${chapter.art.position};"
+        ></div>
+        <div class="chapter-body">
+          <p class="chapter-meta">${copy.meta}</p>
+          <h3 class="chapter-title">${copy.title}</h3>
+          <p>${copy.body}</p>
+          <p>${copy.note}</p>
+          <div class="chapter-stat">
+            <strong>${chapter.value}</strong>
+            <span>${copy.statLabel}</span>
+          </div>
+        </div>
+      </article>
+    `;
+  }).join("");
+}
+
+function renderChronicle(lang) {
+  chronicleRoot.innerHTML = timeline.map((entry) => {
+    const copy = entry[lang];
+    return `
+      <tr>
+        <td class="chronicle-index">${entry.id}</td>
+        <td>${copy.date}</td>
+        <td class="chronicle-event">${copy.title}</td>
+        <td>${copy.teamLabel}</td>
+        <td>${copy.result}</td>
+        <td class="chronicle-note">${copy.punchline}</td>
+      </tr>
+    `;
+  }).join("");
 }
 
 function renderTimeline(lang) {
@@ -797,25 +1182,35 @@ function renderTimeline(lang) {
 }
 
 function renderHonors(lang) {
-  legacyRoot.innerHTML = "";
-  honors.forEach((honor) => {
-    const item = document.createElement("article");
-    item.className = "legacy-item";
-    item.innerHTML = `
+  legacyRoot.innerHTML = honors.map((honor) => `
+    <article class="legacy-item">
       <div class="legacy-icon" aria-hidden="true">${honor.icon}</div>
       <div class="legacy-name">${honor[lang].name}</div>
       <div class="legacy-value">${honor[lang].value}</div>
-    `;
-    legacyRoot.appendChild(item);
-  });
+    </article>
+  `).join("");
 }
 
 function renderClosingCopy(paragraphs) {
   elements.closingCopy.innerHTML = paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("");
 }
 
+function renderFooter(copy) {
+  footerLinksRoot.innerHTML = [
+    { href: "#overview", label: copy.navOverview },
+    { href: "#chapters", label: copy.navChapters },
+    { href: "#chronicle", label: copy.navChronicle },
+    { href: "#timeline", label: copy.navTimeline },
+    { href: "#legacy", label: copy.navLegacy }
+  ].map((item) => `<a href="${item.href}">${item.label}</a>`).join("");
+
+  footerNotesRoot.innerHTML = copy.footerNotes.map((note) => `<p>${note}</p>`).join("");
+}
+
 langButtons.forEach((button) => {
   button.addEventListener("click", () => setLanguage(button.dataset.langBtn));
 });
 
-setLanguage(getPreferredLanguage());
+window.addEventListener("beforeunload", stopHeroTimer);
+
+setLanguage(currentLang);

@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NiKo Tears Timeline</title>
+  <title>NiKo Tears Chronicle</title>
   <meta
     name="description"
-    content="A bilingual Chinese and English timeline of NiKo's Major heartbreaks, honors, and Counter-Strike legacy."
+    content="A bilingual editorial-style chronicle of NiKo's Major heartbreaks, legacy, and long pursuit of Counter-Strike's biggest trophy."
   >
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,69 +19,139 @@
 <body>
   <div class="site-shell">
     <header class="topbar">
-      <a class="brand" href="#top" aria-label="NiKo Tears Timeline">
+      <a class="brand" href="#home" aria-label="NiKo Tears Chronicle">
         <span class="brand-mark">18</span>
         <span class="brand-copy">
-          <strong>NiKo Tears Timeline</strong>
+          <strong>NiKo Tears Chronicle</strong>
           <small id="brand-subline"></small>
         </span>
       </a>
+
+      <nav class="site-nav" aria-label="Section navigation">
+        <a href="#overview" id="nav-overview"></a>
+        <a href="#chapters" id="nav-chapters"></a>
+        <a href="#chronicle" id="nav-chronicle"></a>
+        <a href="#timeline" id="nav-timeline"></a>
+        <a href="#legacy" id="nav-legacy"></a>
+      </nav>
+
       <div class="lang-switch" role="group" aria-label="Language switcher">
         <button type="button" class="lang-btn is-active" data-lang-btn="zh">中文</button>
         <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
       </div>
     </header>
 
-    <main id="top">
+    <main id="home">
       <section class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow" id="hero-eyebrow"></p>
-          <h1 id="hero-title"></h1>
-          <p class="hero-subtitle" id="hero-subtitle"></p>
-          <p class="hero-tagline" id="hero-tagline"></p>
-          <div class="hero-actions">
-            <a class="hero-link" href="#timeline" id="hero-primary"></a>
-            <a class="hero-link muted" href="#legacy" id="hero-secondary"></a>
-          </div>
+        <div class="hero-stage">
+          <div class="hero-slides" id="hero-slides" aria-live="polite"></div>
+          <div class="hero-dots" id="hero-dots" aria-label="Hero slides"></div>
         </div>
-        <aside class="hero-panel" aria-label="Snapshot">
-          <div class="hero-watermark">NIKO</div>
-          <div class="panel-head">
-            <span class="panel-kicker" id="panel-kicker"></span>
-            <span class="panel-year">2015-2026</span>
-          </div>
-          <div class="stat-grid" id="stat-grid"></div>
-          <div class="panel-note" id="panel-note"></div>
+
+        <aside class="hero-rail" aria-label="Editorial summary">
+          <p class="panel-kicker" id="rail-kicker"></p>
+          <h2 id="rail-title"></h2>
+          <p class="rail-summary" id="rail-summary"></p>
+          <div class="hero-stat-grid" id="hero-stat-grid"></div>
         </aside>
       </section>
 
-      <section class="section-head">
-        <p class="section-kicker" id="timeline-kicker"></p>
-        <h2 id="timeline-title"></h2>
-        <p class="section-intro" id="timeline-intro"></p>
+      <section class="section" id="overview">
+        <div class="section-head">
+          <p class="section-kicker" id="overview-kicker"></p>
+          <h2 id="overview-title"></h2>
+          <p class="section-intro" id="overview-intro"></p>
+        </div>
+
+        <div class="overview-grid">
+          <article class="overview-lead">
+            <p class="lead-tag" id="overview-lead-tag"></p>
+            <h3 id="overview-lead-title"></h3>
+            <p class="lead-body" id="overview-lead-body"></p>
+            <div class="overview-note" id="overview-lead-note"></div>
+          </article>
+          <div class="milestone-grid" id="milestone-grid"></div>
+        </div>
       </section>
 
-      <section class="timeline" id="timeline" aria-live="polite"></section>
+      <section class="section" id="chapters">
+        <div class="section-head">
+          <p class="section-kicker" id="chapter-kicker"></p>
+          <h2 id="chapter-title"></h2>
+          <p class="section-intro" id="chapter-intro"></p>
+        </div>
+        <div class="chapter-grid" id="chapter-grid"></div>
+      </section>
 
-      <section class="legacy" id="legacy">
+      <section class="section" id="chronicle">
+        <div class="section-head">
+          <p class="section-kicker" id="chronicle-kicker"></p>
+          <h2 id="chronicle-title"></h2>
+          <p class="section-intro" id="chronicle-intro"></p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="chronicle-table">
+            <thead>
+              <tr>
+                <th id="th-number"></th>
+                <th id="th-date"></th>
+                <th id="th-event"></th>
+                <th id="th-team"></th>
+                <th id="th-result"></th>
+                <th id="th-note"></th>
+              </tr>
+            </thead>
+            <tbody id="chronicle-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section" id="timeline">
+        <div class="section-head">
+          <p class="section-kicker" id="timeline-kicker"></p>
+          <h2 id="timeline-title"></h2>
+          <p class="section-intro" id="timeline-intro"></p>
+        </div>
+        <div class="timeline" id="timeline-root"></div>
+      </section>
+
+      <section class="section legacy-section" id="legacy">
         <div class="section-head legacy-head">
           <p class="section-kicker" id="legacy-kicker"></p>
           <h2 id="legacy-title"></h2>
           <p class="section-intro" id="legacy-intro"></p>
         </div>
-        <div class="legacy-grid" id="legacy-grid"></div>
-        <article class="closing-card">
-          <div class="closing-kicker" id="closing-kicker"></div>
-          <blockquote id="closing-quote"></blockquote>
-          <div class="closing-copy" id="closing-copy"></div>
-        </article>
+
+        <div class="legacy-layout">
+          <div class="legacy-grid" id="legacy-grid"></div>
+          <article class="closing-card">
+            <div class="closing-kicker" id="closing-kicker"></div>
+            <blockquote id="closing-quote"></blockquote>
+            <div class="closing-copy" id="closing-copy"></div>
+          </article>
+        </div>
       </section>
     </main>
 
     <footer class="footer">
-      <p id="footer-line-1"></p>
-      <p id="footer-line-2"></p>
-      <p id="footer-line-3"></p>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">18</div>
+          <p class="footer-desc" id="footer-desc"></p>
+          <p class="footer-copy" id="footer-copy"></p>
+        </div>
+
+        <div>
+          <h3 class="footer-title" id="footer-nav-title"></h3>
+          <div class="footer-links" id="footer-links"></div>
+        </div>
+
+        <div>
+          <h3 class="footer-title" id="footer-about-title"></h3>
+          <div class="footer-notes" id="footer-notes"></div>
+        </div>
+      </div>
     </footer>
   </div>
 
